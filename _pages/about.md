@@ -31,11 +31,12 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='images/framework_English.png' alt="sym" width="120%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Nested Collaborative Learning for Long-Tailed Visual Recognition](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)<a href='https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&citation_for_view=93wHW4oAAAAJ:UebtZRa9Y70C'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+[Nested Collaborative Learning for Long-Tailed Visual Recognition](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)<strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
 **Jun Li**^, Zichang Tan^, Jun Wan, Zhen Lei, Guodong Guo
 
-[**Project**](https://github.com/Bazinga699/NCL) 
+[**Project**](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL)
+![](https://img.shields.io/github/stars/Bazinga699/NCL)
 
 </div>
 </div>
@@ -47,8 +48,9 @@ My research interest includes neural machine translation and computer vision. I 
 
 Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **Jun Li**, Xiangyu Zhang
 
-[**Project**](https://github.com/megvii-research/RevCol) 
-[**Introduction**](https://zhuanlan.zhihu.com/p/607773400) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**Project**](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol)
+![](https://img.shields.io/github/stars/megvii-research/RevCol)
+[**Introduction**](https://zhuanlan.zhihu.com/p/607773400)
 
 
 </div>
