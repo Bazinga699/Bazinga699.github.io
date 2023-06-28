@@ -28,28 +28,29 @@ My research interest includes neural machine translation and computer vision. I 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='images/framework_English.png' alt="sym" width="120%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='https://imgs.wiki/imgs/2023/06/28/0ff3090e6f491dd2.png' alt="sym" width="120%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Nested Collaborative Learning for Long-Tailed Visual Recognition](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)<strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
 **Jun Li**^, Zichang Tan^, Jun Wan, Zhen Lei, Guodong Guo
 
-[**Project**](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL)
+[**Project**](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL?logo=github)
 ![](https://img.shields.io/github/stars/Bazinga699/NCL)
 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='images/revcol.png' alt="sym" width="120%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='https://imgs.wiki/imgs/2023/06/28/4d4a2dbda87781e6.png' alt="sym" width="120%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Reversible Column Networks](https://arxiv.org/pdf/2212.11696.pdf)<strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
 
 Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **Jun Li**, Xiangyu Zhang
 
-[**Project**](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol)
+[**Project**](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol?logo=github)
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
+
 [**Introduction**](https://zhuanlan.zhihu.com/p/607773400)
 
 
