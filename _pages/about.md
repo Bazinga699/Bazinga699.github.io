@@ -31,7 +31,7 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='https://imgs.wiki/imgs/2023/06/28/0ff3090e6f491dd2.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>Nested Collaborative Learning for Long-Tailed Visual Recognition</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<big>**Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
 ***Jun Li**\*, Zichang Tan\*, Jun Wan, Zhen Lei, Guodong Guo*
 
@@ -46,7 +46,7 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='https://imgs.wiki/imgs/2023/06/28/4d4a2dbda87781e6.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>Reversible Column Networks</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
+<big>**Reversible Column Networks**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
 
 
 *Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **Jun Li**, Xiangyu Zhang*
@@ -60,7 +60,7 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
 *Zichang Tan\*, **Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
 
@@ -75,7 +75,7 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/d965119c8a293e42.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
 *Zenghao Bao, Zichang Tan, Member, **Jun Li**, Jun Wan, Xibo Ma, Zhen Lei*
 
@@ -101,4 +101,4 @@ My research interest includes neural machine translation and computer vision. I 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
 # 💻 Internships
-- *2019.05 - 2020.02*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' alt="sym" height="20">
+- *2019.05 - 2020.02*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' alt="sym" height="20" />
