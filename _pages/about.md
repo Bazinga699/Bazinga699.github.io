@@ -28,7 +28,7 @@ My research interest includes neural machine translation and computer vision. I 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='https://imgs.wiki/imgs/2023/06/28/0ff3090e6f491dd2.png' alt="sym" width="120%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='https://imgs.wiki/imgs/2023/06/28/0ff3090e6f491dd2.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>Nested Collaborative Learning for Long-Tailed Visual Recognition</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
@@ -43,7 +43,7 @@ My research interest includes neural machine translation and computer vision. I 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='https://imgs.wiki/imgs/2023/06/28/4d4a2dbda87781e6.png' alt="sym" width="120%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='https://imgs.wiki/imgs/2023/06/28/4d4a2dbda87781e6.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>Reversible Column Networks</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
@@ -55,6 +55,20 @@ My research interest includes neural machine translation and computer vision. I 
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition(Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" height="200"></div></div>
+<div class='paper-box-text' markdown="1">
+
+<big>NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+
+Zichang Tan\*, ***Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
+
+
+[[**PDF**]](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)
+[[**Project**]](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL?logo=github)
+![](https://img.shields.io/github/stars/Bazinga699/NCL)
+
+</div>
+</div>
 
 
 </div>
