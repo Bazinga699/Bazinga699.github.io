@@ -55,12 +55,12 @@ My research interest includes neural machine translation and computer vision. I 
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition(Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
-Zichang Tan\*, ***Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
+*Zichang Tan\*, **Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
 
 
 [[**PDF**]](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)
@@ -70,11 +70,24 @@ Zichang Tan\*, ***Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/d965119c8a293e42.png' alt="sym" height="200"></div></div>
+<div class='paper-box-text' markdown="1">
+
+<big>General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+
+*Zenghao Bao, Zichang Tan, Member, **Jun Li**, Jun Wan, Xibo Ma, Zhen Lei*
+
+
+
+[[**PDF**]]()
+[[**Project**]]()
 
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+</div>
+</div>
+
 
 # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
@@ -89,4 +102,4 @@ Zichang Tan\*, ***Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *2019.05 - 2020.02*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' alt="sym" height="20">
