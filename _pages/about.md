@@ -54,6 +54,8 @@ My research interest includes neural machine translation and computer vision. I 
 [[**PDF**]](https://arxiv.org/pdf/2212.11696.pdf) [[**Introduction**]](https://zhuanlan.zhihu.com/p/607773400) [[**Project**]](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol?logo=github)
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
 
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -81,9 +83,6 @@ My research interest includes neural machine translation and computer vision. I 
 
 [[**PDF**]]()
 [[**Project**]]()
-
-</div>
-</div>
 
 </div>
 </div>
