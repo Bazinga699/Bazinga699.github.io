@@ -6,8 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 github: [metadata]
 # Site Settings
-title                    : "李俊"
-description              : "李俊个人主页test"
+title                    : "Jun Li (李俊)"
+description              : ""
 repository               : "Bazinga699/Bazinga699.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -22,12 +22,13 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "李俊"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "Lorem ipsum College"
+  avatar           : "images/show.png"
+  bio              : "Institute of Automation, Chinese Academy of Science (CASIA)
+  Harbin Institute of Technology (HIT)"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  googlescholar    : "https://scholar.google.com/citations?user=93wHW4oAAAAJ&hl=zh-CN"
   email            : "lijun2021@ia.ac.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
