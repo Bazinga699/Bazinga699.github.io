@@ -19,7 +19,7 @@ redirect_from:
 
 I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I am currently studying for a Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA).
 
-My research interest includes deep learning, computer vision, long-tailed learning, foundation model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations.<strong><span id='total_cit'></span></strong></a> <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+My research interest includes deep learning, computer vision, long-tailed learning, foundation model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 
 # 🔥 News
@@ -105,6 +105,11 @@ My research interest includes deep learning, computer vision, long-tailed learni
 # 📖 Educations
 - *2021.08 - 2024.07*, <img src='images/CASIA2.png' width="30" height="30" />Institute of Automation, Chinese Academy of Science (CASIA), Beijing, China.
 - *2017.08 - 2021.06*, <img src='images/HIT.png' width="30" height="30" />Harbin Institute of Technology (HIT), Harbin, China.
+
+# 💬 Talks
+- *2022.12*, presentation on the paper "Nested Collaborative Learning for Long-Tailed Visual Recognition" at VALSE2022.
+
+
 
 # 💻 Internships
 - *2019.05 - now*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' width="60" height="20" /> Algorithm Intern.
