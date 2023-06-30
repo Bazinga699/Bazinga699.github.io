@@ -79,7 +79,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/d965119c8a293e42.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big>
 
 *Zenghao Bao, Zichang Tan, **Jun Li**, Jun Wan, Xibo Ma, Zhen Lei*
 
@@ -88,6 +88,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 [[**PDF**]]()
 [[**Project**]]()
 
+- \* indicates equal contribution.
 </div>
 </div>
 
