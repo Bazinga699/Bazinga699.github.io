@@ -23,8 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "李俊"
   avatar           : "images/show.png"
-  bio              : "Institute of Automation, Chinese Academy of Science (CASIA)
-  Harbin Institute of Technology (HIT)"
+  bio              : "Institute of Automation, Chinese Academy of Science (CASIA)"
   location         : "Beijing, China"
   employer         :
   pubmed           : 

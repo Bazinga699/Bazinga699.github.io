@@ -23,8 +23,12 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2023.01*: 🎉🎉 One paper was accepted by ICLR 2023. 
+- *2022.12*: I serve as a reviewer for CVPR 2023.
+- *2022.07*: I join the MEGVII Research as an Intern.
+- *2022.03*: 🎉🎉 One paper was accepted by CVPR 2022.
+- *2021.08*: I join National Laboratory of Pattern Recognition under the supervision of Prof. Jun Wan.
+
 
 # 📝 Publications 
 
@@ -89,16 +93,18 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2022.12*  National Scholarship.
+- *2021.06* Outstanding Graduates of Harbin Institute of Technology.
+- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on ![](https://img.shields.io/badge/dynamic/json?color=ff69b4&label=bilibili&query=data.stat.view&url=https%3A%2F%2Fapi.bilibili.com%2Fx%2Fweb-interface%2Fview%3Fbvid%3DBV1Ft4y1i79A&link=https%3A%2F%2Fwww.bilibili.com%2Fvideo%2FBV1Ft4y1i79A%2F%3Fvd_source%3D3168e87544c9e17f675d9261e8440f87).
+- *2021.05* New Engineering Program Design Ability Examination (Level A), Rank 1/2280
+- *2019.12* First Prize in the Heilongjiang Province Division of the National College Student Mathematical Modeling Competition.
+- *2016.11* National Olympiad in Informatics in Provinces (NOIP) - Advanced Group, Second Prize
+
+
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+- *2021.08 - 2024.07*, Institute of Automation, Chinese Academy of Science (CASIA), Beijing, China.
+- *2017.08 - 2021.06*, Harbin Institute of Technology (HIT), Harbin, China.
 
 # 💻 Internships
-- *2019.05 - 2020.02*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' width="60" height="20" />
+- *2019.05 - now*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' width="60" height="20" /> Algorithm Intern.
