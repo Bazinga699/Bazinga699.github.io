@@ -95,7 +95,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 # 🎖 Honors and Awards
 - *2022.12*  National Scholarship.
 - *2021.06* Outstanding Graduates of Harbin Institute of Technology.
-- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on ![](https://img.shields.io/badge/dynamic/json?color=ff69b4&label=bilibili&query=data.stat.view&url=https%3A%2F%2Fapi.bilibili.com%2Fx%2Fweb-interface%2Fview%3Fbvid%3DBV1Ft4y1i79A)[link](https://www.bilibili.com/video/BV1Ft4y1i79A/?vd_source=3168e87544c9e17f675d9261e8440f87).
+- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on ![](https://img.shields.io/badge/dynamic/json?color=ff69b4&label=bilibili&query=data.stat.view&url=https%3A%2F%2Fapi.bilibili.com%2Fx%2Fweb-interface%2Fview%3Fbvid%3DBV1Ft4y1i79A) [link](https://www.bilibili.com/video/BV1Ft4y1i79A/?vd_source=3168e87544c9e17f675d9261e8440f87).
 - *2021.05* New Engineering Program Design Ability Examination (Level A), Rank 1/2280
 - *2019.12* First Prize in the Heilongjiang Province Division of the National College Student Mathematical Modeling Competition.
 - *2016.11* National Olympiad in Informatics in Provinces (NOIP) - Advanced Group, Second Prize
@@ -103,7 +103,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 # 📖 Educations
-- *2021.08 - 2024.07*, <img src='images/CASIA.png' width="30" height="30" />Institute of Automation, Chinese Academy of Science (CASIA), Beijing, China.
+- *2021.08 - 2024.07*, <img src='images/CASIA2.png' width="30" height="30" />Institute of Automation, Chinese Academy of Science (CASIA), Beijing, China.
 - *2017.08 - 2021.06*, <img src='images/HIT.png' width="30" height="30" />Harbin Institute of Technology (HIT), Harbin, China.
 
 # 💻 Internships
