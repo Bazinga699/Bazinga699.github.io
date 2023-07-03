@@ -19,7 +19,7 @@ redirect_from:
 
 I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I am currently studying for a Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA).
 
-My research interest includes deep learning, computer vision, long-tailed learning, foundation model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+My research interest includes deep learning, computer vision, long-tailed learning, foundation model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 
 # 🔥 News
@@ -64,7 +64,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" width="400" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
 
 *Zichang Tan\*, **Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
 
