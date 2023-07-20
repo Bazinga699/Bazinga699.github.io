@@ -32,7 +32,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='https://imgs.wiki/imgs/2023/06/28/0ff3090e6f491dd2.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='images/CVPR.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
