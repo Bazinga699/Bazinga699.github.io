@@ -47,7 +47,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='https://imgs.wiki/imgs/2023/06/28/4d4a2dbda87781e6.png' alt="sym" width="400" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='images/revcol.png' alt="sym" width="400" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**Reversible Column Networks**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
@@ -61,7 +61,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/b9f855ffa60e243a.png' alt="sym" width="400" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='images/PR.png' alt="sym" width="400" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
@@ -76,7 +76,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='https://imgs.wiki/imgs/2023/06/29/d965119c8a293e42.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='images/TIP.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big>
@@ -85,7 +85,7 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 
-[[**PDF**]]()
+[[**PDF**]](http://arxiv.org/abs/2307.10129)
 [[**Project**]]()
 
 </div>
@@ -113,4 +113,4 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 # 💻 Internships
-- *2022.07 - now*, <img src='https://imgs.wiki/imgs/2023/06/29/ae225cd7d60be644.png' width="60" height="20" /> Algorithm Intern.
+- *2022.07 - now*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern
