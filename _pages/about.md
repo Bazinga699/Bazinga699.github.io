@@ -17,9 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I am currently studying for a Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA).
-
-My research interest includes deep learning, computer vision, long-tailed learning, foundation model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I am currently studying for a Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA), advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/).
+I am currently a research intern of the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
+My research interest includes Long-Tailed Learning, Foundation model, Vision Language Model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 
 # 🔥 News
@@ -57,6 +57,22 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 [[**PDF**]](https://arxiv.org/pdf/2212.11696.pdf) [[**Introduction**]](https://zhuanlan.zhihu.com/p/607773400) [[**Project**]](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol?logo=github)
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024 (Under review)</div><img src='images/AAAI.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box-text' markdown="1">
+
+<big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big>
+
+* Hao Tan\*, **Jun Li**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
+
+
+
+[[**PDF**]]()
+[[**Project**]]()
 
 </div>
 </div>
@@ -113,4 +129,4 @@ My research interest includes deep learning, computer vision, long-tailed learni
 
 
 # 💻 Internships
-- *2022.07 - now*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern
+- *2022.07 - now*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern, advisor: [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
