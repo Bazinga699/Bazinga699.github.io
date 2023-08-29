@@ -67,7 +67,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 <big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big>
 
-* Hao Tan\*, **Jun Li**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
+*Hao Tan\*, **Jun Li**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
 
 
 
