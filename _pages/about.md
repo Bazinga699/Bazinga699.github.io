@@ -82,7 +82,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 <big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
 
-*Zichang Tan\*, **Jun Li**\*,  Jun Wan, Zhen Lei, Guodong Guo*
+*Zichang Tan\*, **Jun Li**\*,  Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
 
 
 [[**PDF**]](http://arxiv.org/abs/2306.16709)
