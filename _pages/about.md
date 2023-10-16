@@ -23,6 +23,8 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 
 # 🔥 News
+- *2023.10*: 🎉🎉 One paper was accepted by PR.
+- *2023.10*: 🎉🎉 One paper was accepted by TIP.
 - *2023.01*: 🎉🎉 One paper was accepted by ICLR 2023. 
 - *2022.12*: I serve as a reviewer for CVPR 2023.
 - *2022.07*: I join the MEGVII Research as an Intern.
@@ -77,12 +79,12 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition (Under review)</div><img src='images/PR.png' alt="sym" width="400" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition</div><img src='images/PR.png' alt="sym" width="400" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
 
-*Zichang Tan\*, **Jun Li**\*,  Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
+*Zichang Tan\*, **Jun Li**\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
 
 
 [[**PDF**]](http://arxiv.org/abs/2306.16709)
@@ -92,7 +94,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP (Under review)</div><img src='images/TIP.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP</div><img src='images/TIP.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big>
