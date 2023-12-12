@@ -23,6 +23,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 
 # 🔥 News
+- *2023.12*: 🎉🎉 One paper was accepted by AAAI 2024.
 - *2023.10*: 🎉🎉 One paper was accepted by PR.
 - *2023.10*: 🎉🎉 One paper was accepted by TIP.
 - *2023.01*: 🎉🎉 One paper was accepted by ICLR 2023. 
@@ -64,7 +65,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024 (Under review)</div><img src='images/AAAI.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024 </div><img src='images/AAAI.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big>
@@ -73,7 +74,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 
 
-[[**PDF**]]()
+[[**PDF**]](https://arxiv.org/pdf/2312.06401.pdf)
 [[**Project**]]()
 
 </div>
