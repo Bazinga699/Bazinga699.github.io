@@ -75,7 +75,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 
 [[**PDF**]](https://arxiv.org/pdf/2312.06401.pdf)
-[[**Project**]]()
+[[**Project**]](https://github.com/EricTan7/TGP-T)
 
 </div>
 </div>
