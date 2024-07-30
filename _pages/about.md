@@ -17,12 +17,14 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I am currently studying for a Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA), advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/), collaborate closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
-I am currently a research intern of the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
-My research interest includes Long-Tailed Learning, Foundation model, Vision Language Model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I got my Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA) in 2024, advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/), collaborate closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
+I used to be the research intern of the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
+I'm currently working on technical exploration and application of multimodal foundation models in Kuaishou Technology.
+My research interest includes Long-Tailed Learning, Foundation Model, Vision Language Model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 
 # 🔥 News
+- *2024.07*: I joined in Kuaishou Technology!
 - *2023.12*: 🎉🎉 One paper was accepted by AAAI 2024.
 - *2023.10*: 🎉🎉 One paper was accepted by PR.
 - *2023.10*: 🎉🎉 One paper was accepted by TIP.
@@ -88,7 +90,7 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 *Zichang Tan\*, **Jun Li**\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
 
 
-[[**PDF**]](http://arxiv.org/abs/2306.16709)
+[[**PDF**]](https://arxiv.org/pdf/2306.16709)
 [[**Project**]](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL?logo=github)
 ![](https://img.shields.io/github/stars/Bazinga699/NCL)
 
@@ -132,4 +134,4 @@ My research interest includes Long-Tailed Learning, Foundation model, Vision Lan
 
 
 # 💻 Internships
-- *2022.07 - now*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern, advisor: [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
+- *2022.07 - 2023.12*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern, advisor: [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
