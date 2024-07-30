@@ -22,6 +22,8 @@ I used to be the research intern of the Foundation Model Group at Megvii Researc
 I'm currently working on technical exploration and application of multimodal foundation models in Kuaishou Technology.
 My research interest includes Long-Tailed Learning, Foundation Model, Vision Language Model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
+Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
+
 
 # 🔥 News
 - *2024.07*: I joined in Kuaishou Technology!
