@@ -47,7 +47,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
 
-***<u>**Jun Li**</u>**\*, Zichang Tan\*, Jun Wan, Zhen Lei, Guodong Guo*
+***<u>Jun Li</u>**\*, Zichang Tan\*, Jun Wan, Zhen Lei, Guodong Guo*
 
 
 [[**PDF**]](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)
@@ -63,7 +63,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 <big>**Reversible Column Networks**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
 
 
-*Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, ****<u>Jun Li</u>****, Xiangyu Zhang*
+*Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **<u>Jun Li</u>**, Xiangyu Zhang*
 
 [[**PDF**]](https://arxiv.org/pdf/2212.11696.pdf) [[**Introduction**]](https://zhuanlan.zhihu.com/p/607773400) [[**Project**]](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol?logo=github)
 ![](https://img.shields.io/github/stars/megvii-research/RevCol)
@@ -77,7 +77,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:8k81kl-MbHgC'></span></strong>
 
-*Hao Tan\*, ****<u>Jun Li</u>****\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
+*Hao Tan\*, **<u>Jun Li</u>**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
 
 
 
@@ -93,7 +93,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
 
-*Zichang Tan\*, ****<u>Jun Li</u>****\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
+*Zichang Tan\*, **<u>Jun Li</u>**\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
 
 
 [[**PDF**]](https://arxiv.org/pdf/2306.16709)
@@ -108,7 +108,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:5nxA0vEk-isC'></span></strong>
 
-*Zenghao Bao, Zichang Tan, ****<u>Jun Li</u>****, Jun Wan, Xibo Ma, Zhen Lei*
+*Zenghao Bao, Zichang Tan, **<u>Jun Li</u>**, Jun Wan, Xibo Ma, Zhen Lei*
 
 
 
@@ -123,7 +123,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**Recover and Match: Open-Vocabulary Multi-Label Recognition through Knowledge-Constrained Optimal Transport**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:KlAtU1dfN6UC'></span></strong>
 
-*Hao Tan, Zichang Tan, **<u>**Jun Li**</u>**, Ajian Liu, Jun Wan, Zhen Lei*
+*Hao Tan, Zichang Tan, **<u>Jun Li</u>**, Ajian Liu, Jun Wan, Zhen Lei*
 
 
 [[**PDF**]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tan_Recover_and_Match_Open-Vocabulary_Multi-Label_Recognition_through_Knowledge-Constrained_Optimal_Transport_CVPR_2025_paper.pdf)
@@ -138,7 +138,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <big>**Factorized Learning Assisted with Large Language Model for Gloss-free Sign Language Translation**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:3fE2CSJIrl8C'></span></strong>
 
-*Zhigang Chen, Benjia Zhou, **<u>**Jun Li**</u>**, Jun Wan, Zhen Lei, Ning Jiang, Quan Lu, Guoqing Zhao*
+*Zhigang Chen, Benjia Zhou, **<u>Jun Li</u>**, Jun Wan, Zhen Lei, Ning Jiang, Quan Lu, Guoqing Zhao*
 
 
 [[**PDF**]](https://arxiv.org/pdf/2403.12556?)
