@@ -26,7 +26,10 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 
 # 🔥 News
+- *2025.05*: 🎉🎉 One paper was accepted by TNNLS.
+- *2025.03*: 🎉🎉 One paper was accepted by CVPR 2025.
 - *2024.07*: I joined in Kuaishou Technology!
+- *2024.03*: 🎉🎉 One paper was accepted by COLING 2024.
 - *2023.12*: 🎉🎉 One paper was accepted by AAAI 2024.
 - *2023.10*: 🎉🎉 One paper was accepted by PR.
 - *2023.10*: 🎉🎉 One paper was accepted by TIP.
@@ -72,14 +75,15 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024 </div><img src='images/AAAI.png' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big>
+<big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:8k81kl-MbHgC'></span></strong>
 
 *Hao Tan\*, **Jun Li**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
 
 
 
 [[**PDF**]](https://arxiv.org/pdf/2312.06401.pdf)
-[[**Project**]](https://github.com/EricTan7/TGP-T)
+[[**Project**]](https://github.com/EricTan7/TGP-T)![](https://img.shields.io/github/forks/EricTan7/TGP-T?logo=github)
+![](https://img.shields.io/github/stars/EricTan7/TGP-T)
 
 </div>
 </div>
