@@ -1,0 +1,178 @@
+<script>
+  $(document).ready(function () {
+    var widget = document.getElementById('goatcounter-visitor-map');
+    if (!widget) {
+      return;
+    }
+
+    {% if site.goatcounter_stats_use_cdn %}
+    var statsBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@';
+    {% else %}
+    var statsBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/';
+    {% endif %}
+
+    var statsUrl = statsBaseUrl + 'goatcounter-stats/country-stats.json';
+    var mapTitle = document.getElementById('goatcounter-map-title');
+    var mapSubtitle = document.getElementById('goatcounter-map-subtitle');
+    var totalVisitors = document.getElementById('goatcounter-total-visitors');
+    var totalCountries = document.getElementById('goatcounter-total-countries');
+    var countriesList = document.getElementById('goatcounter-country-list');
+    var emptyState = document.getElementById('goatcounter-empty-state');
+    var mapContainer = document.getElementById('goatcounter-map');
+
+    function setEmptyState(message) {
+      if (mapSubtitle) {
+        mapSubtitle.textContent = message;
+      }
+      if (emptyState) {
+        emptyState.hidden = false;
+      }
+      if (mapContainer) {
+        mapContainer.style.display = 'none';
+      }
+    }
+
+    function formatDate(value) {
+      if (!value) {
+        return '';
+      }
+
+      var date = new Date(value);
+      if (isNaN(date.getTime())) {
+        return '';
+      }
+
+      return date.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    }
+
+    function countryName(code) {
+      if (!code) {
+        return 'Unknown';
+      }
+
+      try {
+        if (window.Intl && Intl.DisplayNames) {
+          var displayNames = new Intl.DisplayNames(['en'], { type: 'region' });
+          return displayNames.of(code) || code;
+        }
+      } catch (error) {}
+
+      return code;
+    }
+
+    function ensureGoogleCharts(callback) {
+      if (window.google && google.charts && google.visualization) {
+        callback();
+        return;
+      }
+
+      var existing = document.getElementById('google-charts-loader');
+      if (existing) {
+        existing.addEventListener('load', callback, { once: true });
+        return;
+      }
+
+      var script = document.createElement('script');
+      script.id = 'google-charts-loader';
+      script.src = 'https://www.gstatic.com/charts/loader.js';
+      script.async = true;
+      script.onload = callback;
+      document.head.appendChild(script);
+    }
+
+    function renderMap(data) {
+      ensureGoogleCharts(function () {
+        google.charts.load('current', {
+          packages: ['geochart']
+        });
+
+        google.charts.setOnLoadCallback(function () {
+          var chartData = new google.visualization.DataTable();
+          chartData.addColumn('string', 'Country');
+          chartData.addColumn('number', 'Visitors');
+
+          (data.countries || []).forEach(function (item) {
+            if (item.code && item.visitors > 0) {
+              chartData.addRow([item.code, item.visitors]);
+            }
+          });
+
+          var chart = new google.visualization.GeoChart(mapContainer);
+          chart.draw(chartData, {
+            backgroundColor: 'transparent',
+            datalessRegionColor: '#f3f4f6',
+            defaultColor: '#c7d2fe',
+            colorAxis: {
+              colors: ['#bfdbfe', '#60a5fa', '#1d4ed8']
+            },
+            legend: 'none',
+            tooltip: {
+              textStyle: {
+                color: '#111827'
+              }
+            }
+          });
+        });
+      });
+    }
+
+    $.getJSON(statsUrl, function (data) {
+      var countries = data.countries || [];
+
+      if (mapTitle) {
+        mapTitle.textContent = data.title || 'Visitor Map';
+      }
+
+      if (mapSubtitle) {
+        var updatedAt = formatDate(data.updated_at);
+        mapSubtitle.textContent = updatedAt ? 'Updated ' + updatedAt : 'Country-level visitor distribution';
+      }
+
+      if (totalVisitors) {
+        totalVisitors.textContent = (data.total_unique_visitors || 0).toLocaleString();
+      }
+
+      if (totalCountries) {
+        totalCountries.textContent = (data.total_countries || 0).toLocaleString();
+      }
+
+      if (countriesList) {
+        countriesList.innerHTML = '';
+
+        countries.slice(0, 8).forEach(function (item) {
+          var listItem = document.createElement('li');
+          var label = document.createElement('span');
+          var value = document.createElement('strong');
+
+          label.textContent = countryName(item.code);
+          value.textContent = item.visitors.toLocaleString();
+
+          listItem.appendChild(label);
+          listItem.appendChild(value);
+          countriesList.appendChild(listItem);
+        });
+      }
+
+      if (!countries.length) {
+        setEmptyState('GoatCounter is connected, but there is no country data yet.');
+        return;
+      }
+
+      if (emptyState) {
+        emptyState.hidden = true;
+      }
+
+      if (mapContainer) {
+        mapContainer.style.display = 'block';
+      }
+
+      renderMap(data);
+    }).fail(function () {
+      setEmptyState('Waiting for GoatCounter stats. Add the GoatCounter secrets and let the workflow generate the JSON file.');
+    });
+  });
+</script>

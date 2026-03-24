@@ -107,3 +107,127 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.visitor-map-section {
+    margin-top: 3.5rem;
+    padding: 2rem 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+
+    h1 {
+        margin-top: 0;
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h2 {
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+}
+
+.visitor-map-section__header {
+    margin-bottom: 1.25rem;
+
+    p {
+        margin-bottom: 0;
+        color: #4b5563;
+    }
+}
+
+.visitor-map-section__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.visitor-map-section__stat-card {
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+
+    span {
+        display: block;
+        color: #1e3a8a;
+        font-size: 0.92rem;
+    }
+
+    strong {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 1.5rem;
+        color: #0f172a;
+    }
+}
+
+.visitor-map-section__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @include breakpoint($medium) {
+        grid-template-columns: minmax(0, 1.9fr) minmax(250px, 0.9fr);
+        align-items: start;
+    }
+}
+
+.visitor-map-section__map-wrap,
+.visitor-map-section__list-wrap {
+    min-width: 0;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.visitor-map-section__map-wrap {
+    padding: 0.75rem;
+}
+
+#goatcounter-map {
+    width: 100%;
+    min-height: 360px;
+}
+
+.visitor-map-section__empty-state {
+    display: grid;
+    place-items: center;
+    min-height: 360px;
+    padding: 1.5rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.visitor-map-section__list-wrap {
+    padding: 1rem 1rem 0.5rem;
+}
+
+.visitor-map-section__country-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-top: 1px solid #eef2f7;
+    }
+
+    li:first-child {
+        border-top: 0;
+        padding-top: 0.2rem;
+    }
+
+    span {
+        color: #111827;
+    }
+
+    strong {
+        color: #1d4ed8;
+    }
+}

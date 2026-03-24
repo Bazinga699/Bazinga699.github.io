@@ -168,3 +168,35 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 # 💻 Internships
 - *2022.07 - 2023.12*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern, advisor: [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
+
+<section id="goatcounter-visitor-map" class="visitor-map-section">
+  <div class="visitor-map-section__header">
+    <h1 id="goatcounter-map-title">Visitors Around the World</h1>
+    <p id="goatcounter-map-subtitle">Loading country-level visitor data...</p>
+  </div>
+
+  <div class="visitor-map-section__stats">
+    <div class="visitor-map-section__stat-card">
+      <span>Total visitors</span>
+      <strong id="goatcounter-total-visitors">0</strong>
+    </div>
+    <div class="visitor-map-section__stat-card">
+      <span>Countries</span>
+      <strong id="goatcounter-total-countries">0</strong>
+    </div>
+  </div>
+
+  <div class="visitor-map-section__body">
+    <div class="visitor-map-section__map-wrap">
+      <div id="goatcounter-map"></div>
+      <div id="goatcounter-empty-state" class="visitor-map-section__empty-state" hidden>
+        Waiting for the first GoatCounter country export.
+      </div>
+    </div>
+
+    <div class="visitor-map-section__list-wrap">
+      <h2>Top countries</h2>
+      <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
+    </div>
+  </div>
+</section>
