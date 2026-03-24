@@ -81,6 +81,22 @@ def detect_field(row, suffix):
     raise KeyError(f"Could not find field ending with {suffix}")
 
 
+def is_root_path(path):
+    normalized = normalize_path(path)
+    candidates = {normalized, normalized.rstrip("/")}
+
+    for root_path in ROOT_PATHS:
+        root_normalized = normalize_path(root_path)
+        if normalized == root_normalized:
+            return True
+        if normalized.rstrip("/") == root_normalized.rstrip("/"):
+            return True
+        if root_normalized in candidates or root_normalized.rstrip("/") in candidates:
+            return True
+
+    return False
+
+
 def build_stats(rows):
     if not rows:
         return {
@@ -94,41 +110,47 @@ def build_stats(rows):
     sample = rows[0]
     path_field = detect_field(sample, "Path")
     event_field = detect_field(sample, "Event")
-    session_field = detect_field(sample, "Session")
     location_field = detect_field(sample, "Location")
+    first_visit_field = detect_field(sample, "FirstVisit")
+    bot_field = detect_field(sample, "Bot")
 
-    total_sessions = set()
-    countries = defaultdict(set)
+    total_visits = 0
+    countries = defaultdict(int)
+    matched_rows = 0
 
     for row in rows:
         if parse_bool(row.get(event_field, "")):
             continue
 
         path = normalize_path(row.get(path_field, ""))
-        if path not in ROOT_PATHS:
+        if not is_root_path(path):
             continue
 
-        session = row.get(session_field, "").strip()
-        if not session:
+        matched_rows += 1
+
+        if row.get(bot_field, "").strip() not in ("", "0"):
             continue
+
+        if not parse_bool(row.get(first_visit_field, "")):
+            continue
+
+        total_visits += 1
 
         location = row.get(location_field, "").strip().upper()
         country_code = location.split("-", 1)[0] if location else ""
-
-        total_sessions.add(session)
         if country_code:
-            countries[country_code].add(session)
+            countries[country_code] += 1
 
     country_items = [
-        {"code": code, "visitors": len(sessions)}
-        for code, sessions in countries.items()
+        {"code": code, "visitors": visits}
+        for code, visits in countries.items()
     ]
     country_items.sort(key=lambda item: (-item["visitors"], item["code"]))
 
     return {
-        "title": "Visitors Around the World",
+        "title": "Visitors Around the World" if matched_rows else "Visitor Map",
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "total_unique_visitors": len(total_sessions),
+        "total_unique_visitors": total_visits,
         "total_countries": len(country_items),
         "countries": country_items,
     }
