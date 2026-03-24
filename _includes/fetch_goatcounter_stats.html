@@ -43,9 +43,16 @@
       }
 
       return date.toLocaleDateString(undefined, {
+        timeZone: 'Asia/Shanghai',
         year: 'numeric',
         month: 'short',
         day: 'numeric'
+      }) + ' ' + date.toLocaleTimeString(undefined, {
+        timeZone: 'Asia/Shanghai',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
       });
     }
 
@@ -129,7 +136,7 @@
 
       if (mapSubtitle) {
         var updatedAt = formatDate(data.updated_at);
-        mapSubtitle.textContent = updatedAt ? 'Updated ' + updatedAt : 'Country-level visitor distribution';
+        mapSubtitle.textContent = updatedAt ? 'Updated ' + updatedAt + ' (Beijing Time)' : 'Country-level visitor distribution';
       }
 
       if (totalVisitors) {
