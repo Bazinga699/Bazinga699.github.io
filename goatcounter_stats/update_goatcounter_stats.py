@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import csv
+import gzip
 import io
 import json
 import os
@@ -65,6 +66,12 @@ def load_rows(csv_text):
         if row:
             rows.append(row)
     return rows
+
+
+def decode_csv_bytes(raw_bytes):
+    if raw_bytes[:2] == b"\x1f\x8b":
+        raw_bytes = gzip.decompress(raw_bytes)
+    return raw_bytes.decode("utf-8")
 
 
 def detect_field(row, suffix):
@@ -138,7 +145,7 @@ def main():
 
     wait_for_export(export_id)
     csv_bytes = api_request(f"/export/{export_id}/download", accept="text/csv")
-    csv_text = csv_bytes.decode("utf-8")
+    csv_text = decode_csv_bytes(csv_bytes)
     rows = load_rows(csv_text)
     stats = build_stats(rows)
 
