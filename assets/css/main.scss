@@ -235,14 +235,14 @@ h1:before, .anchor:before {
 }
 
 .visitor-map-section__svg path.is-hovered-gentle {
-    transform: scale(1.03);
-    filter: brightness(1.03) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.16));
+    transform: scale(1.04);
+    filter: brightness(1.05) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.18));
 }
 
 .visitor-map-section__svg path.is-hovered-soft {
-    filter: brightness(1.06) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.16));
+    filter: brightness(1.09) saturate(1.04) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.18));
     stroke: #0f172a !important;
-    stroke-width: 1 !important;
+    stroke-width: 1.2 !important;
 }
 
 .visitor-map-section__map-tooltip {

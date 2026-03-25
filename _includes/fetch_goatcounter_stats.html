@@ -150,6 +150,13 @@
       return (target.id || target.getAttribute('id') || target.tagName || 'node').toLowerCase();
     }
 
+    function primaryGeometryTarget(target) {
+      if (target.tagName.toLowerCase() === 'g') {
+        return target.querySelector('path.mainland') || target;
+      }
+      return target;
+    }
+
     function hoverModeForTarget(target) {
       var key = getHoverModeKey(target);
       if (hoverModeCache[key]) {
@@ -158,10 +165,11 @@
 
       var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
       var pathCount = nodes.length;
+      var geometryTarget = primaryGeometryTarget(target);
       var box;
 
       try {
-        box = target.getBBox();
+        box = geometryTarget.getBBox();
       } catch (error) {
         box = { width: 0, height: 0 };
       }
@@ -174,9 +182,9 @@
       var aspect = maxEdge / Math.max(minEdge, 1);
       var mode = 'lift';
 
-      if (pathCount > 1 || area < 160 || minEdge < 9 || aspect > 4.5) {
+      if (area < 120 || minEdge < 7 || aspect > 5.5) {
         mode = 'soft';
-      } else if (area < 1400 || minEdge < 18 || aspect > 2.6) {
+      } else if (area < 1100 || minEdge < 16 || aspect > 3.2 || pathCount > 10) {
         mode = 'gentle';
       }
 
