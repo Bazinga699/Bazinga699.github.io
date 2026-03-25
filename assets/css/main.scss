@@ -216,6 +216,10 @@ h1:before, .anchor:before {
     font-size: 0.86rem;
 }
 
+.visitor-map-section__empty-state[hidden] {
+    display: none !important;
+}
+
 .visitor-map-section__list-wrap {
     padding: 0.8rem 0.8rem 0.35rem;
 }
