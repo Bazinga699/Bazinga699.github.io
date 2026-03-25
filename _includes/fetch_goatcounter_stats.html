@@ -5,13 +5,8 @@
       return;
     }
 
-    {% if site.goatcounter_stats_use_cdn %}
-    var statsBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@';
-    {% else %}
-    var statsBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/';
-    {% endif %}
-
-    var statsUrl = statsBaseUrl + 'goatcounter-stats/country-stats.json';
+    var cdnStatsUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@goatcounter-stats/country-stats.json';
+    var rawStatsUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/goatcounter-stats/country-stats.json';
     var mapTitle = document.getElementById('goatcounter-map-title');
     var mapSubtitle = document.getElementById('goatcounter-map-subtitle');
     var totalVisitors = document.getElementById('goatcounter-total-visitors');
@@ -127,7 +122,7 @@
       });
     }
 
-    $.getJSON(statsUrl, function (data) {
+    function applyData(data) {
       var countries = data.countries || [];
 
       if (mapTitle) {
@@ -178,8 +173,32 @@
       }
 
       renderMap(data);
-    }).fail(function () {
+    }
+
+    function loadStats(url, onSuccess, onError) {
+      $.getJSON(url, onSuccess).fail(onError);
+    }
+
+    loadStats(cdnStatsUrl, function (data) {
+      var countries = data.countries || [];
+      var totalVisitorsCount = data.total_unique_visitors || 0;
+
+      if (!countries.length && totalVisitorsCount === 0) {
+        loadStats(rawStatsUrl + '?t=' + Date.now(), function (freshData) {
+          applyData(freshData);
+        }, function () {
+          applyData(data);
+        });
+        return;
+      }
+
+      applyData(data);
+    }, function () {
+      loadStats(rawStatsUrl + '?t=' + Date.now(), function (data) {
+        applyData(data);
+      }, function () {
       setEmptyState('Waiting for GoatCounter stats. Add the GoatCounter secrets and let the workflow generate the JSON file.');
+      });
     });
   });
 </script>
