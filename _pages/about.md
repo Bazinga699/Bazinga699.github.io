@@ -178,7 +178,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
   <div class="visitor-map-section__body">
     <div class="visitor-map-section__map-wrap">
       <div id="goatcounter-map"></div>
-      <div id="goatcounter-empty-state" class="visitor-map-section__empty-state" hidden>
+      <div id="goatcounter-empty-state" class="visitor-map-section__empty-state" style="display: none;">
         No visitor data yet.
       </div>
     </div>

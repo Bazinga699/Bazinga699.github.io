@@ -15,13 +15,24 @@
     var emptyState = document.getElementById('goatcounter-empty-state');
     var mapContainer = document.getElementById('goatcounter-map');
 
+    function hideEmptyState() {
+      if (emptyState) {
+        emptyState.style.display = 'none';
+      }
+    }
+
+    function showEmptyState(message) {
+      if (emptyState) {
+        emptyState.textContent = message;
+        emptyState.style.display = 'grid';
+      }
+    }
+
     function setEmptyState(message) {
       if (mapSubtitle) {
         mapSubtitle.textContent = message;
       }
-      if (emptyState) {
-        emptyState.hidden = false;
-      }
+      showEmptyState(message);
       if (mapContainer) {
         mapContainer.style.display = 'none';
       }
@@ -164,9 +175,7 @@
         return;
       }
 
-      if (emptyState) {
-        emptyState.hidden = true;
-      }
+      hideEmptyState();
 
       if (mapContainer) {
         mapContainer.style.display = 'block';
