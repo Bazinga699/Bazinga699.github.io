@@ -172,32 +172,35 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 <section id="goatcounter-visitor-map" class="visitor-map-section">
   <div class="visitor-map-section__header">
     <h1 id="goatcounter-map-title">Visitors Around the World</h1>
-    <p id="goatcounter-map-subtitle">Loading country-level visitor data...</p>
-  </div>
-
-  <div class="visitor-map-section__stats">
-    <div class="visitor-map-section__stat-card">
-      <span>Total visitors</span>
-      <strong id="goatcounter-total-visitors">0</strong>
-    </div>
-    <div class="visitor-map-section__stat-card">
-      <span>Countries</span>
-      <strong id="goatcounter-total-countries">0</strong>
-    </div>
+    <p class="visitor-map-section__started-at">Tracking since 2026.03.24</p>
   </div>
 
   <div class="visitor-map-section__body">
     <div class="visitor-map-section__map-wrap">
       <div id="goatcounter-map"></div>
-      <div id="goatcounter-small-regions" class="visitor-map-section__small-regions" hidden></div>
       <div id="goatcounter-empty-state" class="visitor-map-section__empty-state" hidden>
-        Waiting for the first GoatCounter country export.
+        No visitor data yet.
       </div>
     </div>
 
-    <div class="visitor-map-section__list-wrap">
-      <h2>Top countries</h2>
-      <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
+    <div class="visitor-map-section__sidebar">
+      <div class="visitor-map-section__stats">
+        <div class="visitor-map-section__stat-card">
+          <span>Total visitors</span>
+          <strong id="goatcounter-total-visitors">0</strong>
+        </div>
+        <div class="visitor-map-section__stat-card">
+          <span>Countries</span>
+          <strong id="goatcounter-total-countries">0</strong>
+        </div>
+      </div>
+
+      <div class="visitor-map-section__list-wrap">
+        <h2>Top countries</h2>
+        <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
+      </div>
     </div>
   </div>
+
+  <p id="goatcounter-map-subtitle" class="visitor-map-section__updated-at">Loading country-level visitor data...</p>
 </section>

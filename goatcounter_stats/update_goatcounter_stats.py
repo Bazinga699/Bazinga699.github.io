@@ -19,6 +19,11 @@ ROOT_PATHS = [
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "results")
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "country-stats.json")
 ALL_TIME_START = "2000-01-01T00:00:00Z"
+COUNTRY_CODE_ALIASES = {
+    "HK": "CN",
+    "MO": "CN",
+    "TW": "CN",
+}
 
 
 def api_request(path, query=None):
@@ -53,7 +58,7 @@ def code_from_location(stat):
     if "-" in value:
         return value.split("-", 1)[0]
 
-    return value[:2]
+    return COUNTRY_CODE_ALIASES.get(value[:2], value[:2])
 
 
 def get_locations():
@@ -77,13 +82,14 @@ def get_locations():
             break
         offset += 100
 
-    countries = []
+    merged = {}
     for stat in stats:
         code = code_from_location(stat)
         count = int(stat.get("count", 0) or 0)
         if code and count > 0:
-            countries.append({"code": code, "visitors": count})
+            merged[code] = merged.get(code, 0) + count
 
+    countries = [{"code": code, "visitors": count} for code, count in merged.items()]
     countries.sort(key=lambda item: (-item["visitors"], item["code"]))
     return countries
 

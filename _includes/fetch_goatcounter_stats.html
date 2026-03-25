@@ -14,8 +14,6 @@
     var countriesList = document.getElementById('goatcounter-country-list');
     var emptyState = document.getElementById('goatcounter-empty-state');
     var mapContainer = document.getElementById('goatcounter-map');
-    var smallRegions = document.getElementById('goatcounter-small-regions');
-    var tinyRegionCodes = ['AD', 'HK', 'LI', 'MC', 'MO', 'MT', 'SG', 'SM', 'VA'];
 
     function setEmptyState(message) {
       if (mapSubtitle) {
@@ -26,10 +24,6 @@
       }
       if (mapContainer) {
         mapContainer.style.display = 'none';
-      }
-      if (smallRegions) {
-        smallRegions.hidden = true;
-        smallRegions.innerHTML = '';
       }
     }
 
@@ -90,40 +84,6 @@
       script.async = true;
       script.onload = callback;
       document.head.appendChild(script);
-    }
-
-    function renderSmallRegions(countries) {
-      if (!smallRegions) {
-        return;
-      }
-
-      var tinyRegions = countries.filter(function (item) {
-        return tinyRegionCodes.indexOf(item.code) !== -1;
-      });
-
-      if (!tinyRegions.length) {
-        smallRegions.hidden = true;
-        smallRegions.innerHTML = '';
-        return;
-      }
-
-      smallRegions.innerHTML = '';
-
-      tinyRegions.forEach(function (item) {
-        var badge = document.createElement('div');
-        var name = document.createElement('span');
-        var count = document.createElement('strong');
-
-        badge.className = 'visitor-map-section__small-region-badge';
-        name.textContent = countryName(item.code);
-        count.textContent = item.visitors.toLocaleString();
-
-        badge.appendChild(name);
-        badge.appendChild(count);
-        smallRegions.appendChild(badge);
-      });
-
-      smallRegions.hidden = false;
     }
 
     function renderMap(data) {
@@ -199,10 +159,8 @@
         });
       }
 
-      renderSmallRegions(countries);
-
       if (!countries.length) {
-        setEmptyState('GoatCounter is connected, but there is no country data yet.');
+        setEmptyState('No visitor data yet.');
         return;
       }
 

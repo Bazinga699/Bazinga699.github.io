@@ -109,57 +109,66 @@ h1:before, .anchor:before {
 }
 
 .visitor-map-section {
-    margin-top: 3.5rem;
-    padding: 2rem 1.25rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
+    margin-top: 2.75rem;
+    padding: 1.25rem 1rem 0.9rem;
+    border: 1px solid #e6ebf2;
+    border-radius: 16px;
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
 
     h1 {
         margin-top: 0;
         border-bottom: 0;
         padding-bottom: 0;
+        margin-bottom: 0.2rem;
+        font-size: 1.45rem;
     }
 
     h2 {
         margin-top: 0;
-        font-size: 1.1rem;
+        font-size: 0.98rem;
     }
 }
 
 .visitor-map-section__header {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
+}
 
-    p {
-        margin-bottom: 0;
-        color: #4b5563;
-    }
+.visitor-map-section__started-at,
+.visitor-map-section__updated-at {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.visitor-map-section__updated-at {
+    margin-top: 0.75rem;
 }
 
 .visitor-map-section__stats {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-bottom: 1.25rem;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    margin-bottom: 0.75rem;
 }
 
 .visitor-map-section__stat-card {
-    padding: 0.9rem 1rem;
-    border-radius: 14px;
-    background: #eff6ff;
+    padding: 0.7rem 0.8rem;
+    border-radius: 12px;
+    background: #f3f8ff;
     border: 1px solid #dbeafe;
 
     span {
         display: block;
         color: #1e3a8a;
-        font-size: 0.92rem;
+        font-size: 0.8rem;
     }
 
     strong {
         display: block;
-        margin-top: 0.2rem;
-        font-size: 1.5rem;
+        margin-top: 0.1rem;
+        font-size: 1.2rem;
         color: #0f172a;
     }
 }
@@ -167,68 +176,48 @@ h1:before, .anchor:before {
 .visitor-map-section__body {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.8rem;
 
     @include breakpoint($medium) {
-        grid-template-columns: minmax(0, 1.9fr) minmax(250px, 0.9fr);
+        grid-template-columns: minmax(0, 2.6fr) minmax(180px, 0.85fr);
         align-items: start;
     }
+}
+
+.visitor-map-section__sidebar {
+    display: grid;
+    gap: 0.7rem;
 }
 
 .visitor-map-section__map-wrap,
 .visitor-map-section__list-wrap {
     min-width: 0;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    border: 1px solid #e7edf5;
     background: #fff;
 }
 
 .visitor-map-section__map-wrap {
-    padding: 0.75rem;
+    padding: 0.55rem;
 }
 
 #goatcounter-map {
     width: 100%;
-    min-height: 360px;
-}
-
-.visitor-map-section__small-regions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid #eef2f7;
-}
-
-.visitor-map-section__small-region-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.45rem 0.7rem;
-    border: 1px solid #dbeafe;
-    border-radius: 999px;
-    background: #eff6ff;
-    color: #1e3a8a;
-    font-size: 0.9rem;
-    line-height: 1;
-}
-
-.visitor-map-section__small-region-badge strong {
-    color: #0f172a;
+    min-height: 285px;
 }
 
 .visitor-map-section__empty-state {
     display: grid;
     place-items: center;
-    min-height: 360px;
-    padding: 1.5rem;
+    min-height: 285px;
+    padding: 1rem;
     color: #6b7280;
     text-align: center;
+    font-size: 0.86rem;
 }
 
 .visitor-map-section__list-wrap {
-    padding: 1rem 1rem 0.5rem;
+    padding: 0.8rem 0.8rem 0.35rem;
 }
 
 .visitor-map-section__country-list {
@@ -239,14 +228,15 @@ h1:before, .anchor:before {
     li {
         display: flex;
         justify-content: space-between;
-        gap: 1rem;
-        padding: 0.75rem 0;
+        gap: 0.75rem;
+        padding: 0.58rem 0;
         border-top: 1px solid #eef2f7;
+        font-size: 0.86rem;
     }
 
     li:first-child {
         border-top: 0;
-        padding-top: 0.2rem;
+        padding-top: 0.15rem;
     }
 
     span {
