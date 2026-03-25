@@ -192,6 +192,32 @@ h1:before, .anchor:before {
     min-height: 360px;
 }
 
+.visitor-map-section__small-regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eef2f7;
+}
+
+.visitor-map-section__small-region-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.visitor-map-section__small-region-badge strong {
+    color: #0f172a;
+}
+
 .visitor-map-section__empty-state {
     display: grid;
     place-items: center;
