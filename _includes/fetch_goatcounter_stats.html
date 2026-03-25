@@ -97,14 +97,9 @@
       return 'rgb(' + interpolate(start.r, end.r) + ', ' + interpolate(start.g, end.g) + ', ' + interpolate(start.b, end.b) + ')';
     }
 
-    function setSvgTitle(target, text) {
-      var svgNamespace = 'http://www.w3.org/2000/svg';
-      var title = target.querySelector('title');
-      if (!title) {
-        title = document.createElementNS(svgNamespace, 'title');
-        target.insertBefore(title, target.firstChild);
-      }
-      title.textContent = text;
+    function setSvgLabel(target, text) {
+      target.setAttribute('data-tooltip', text);
+      target.setAttribute('aria-label', text);
     }
 
     function positionTooltip(event) {
@@ -150,17 +145,27 @@
       }
     }
 
+    function setHoverState(target, isHovered) {
+      var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
+
+      Array.prototype.forEach.call(nodes, function (node) {
+        node.classList.toggle('is-hovered', isHovered);
+      });
+    }
+
     function bindTooltip(target, label) {
       var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
 
       Array.prototype.forEach.call(nodes, function (node) {
         node.onmouseenter = function (event) {
+          setHoverState(target, true);
           showTooltip(event, label);
         };
         node.onmousemove = function (event) {
           positionTooltip(event);
         };
         node.onmouseleave = function () {
+          setHoverState(target, false);
           hideTooltip();
         };
       });
@@ -173,7 +178,7 @@
         node.style.fill = color;
         node.style.stroke = '#ffffff';
         node.style.strokeWidth = '0.7';
-        setSvgTitle(node, label);
+        setSvgLabel(node, label);
       });
 
       bindTooltip(target, label);

@@ -219,12 +219,19 @@ h1:before, .anchor:before {
 }
 
 .visitor-map-section__svg path {
-    transition: fill 160ms ease-in-out;
+    transition: fill 160ms ease-in-out, transform 160ms ease-in-out, filter 160ms ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
 }
 
 .visitor-map-section__svg path,
 .visitor-map-section__svg g {
     cursor: pointer;
+}
+
+.visitor-map-section__svg path.is-hovered {
+    transform: scale(1.06);
+    filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.22));
 }
 
 .visitor-map-section__map-tooltip {
