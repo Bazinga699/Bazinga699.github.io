@@ -56,7 +56,7 @@ def code_from_location(stat):
         return ""
 
     if "-" in value:
-        return value.split("-", 1)[0]
+        value = value.split("-", 1)[0]
 
     return COUNTRY_CODE_ALIASES.get(value[:2], value[:2])
 
@@ -89,12 +89,12 @@ def get_locations():
         if code and count > 0:
             merged[code] = merged.get(code, 0) + count
 
-    countries = [{"code": code, "visitors": count} for code, count in merged.items()]
-    countries.sort(key=lambda item: (-item["visitors"], item["code"]))
+    countries = [{"code": code, "pageviews": count} for code, count in merged.items()]
+    countries.sort(key=lambda item: (-item["pageviews"], item["code"]))
     return countries
 
 
-def get_total_visitors():
+def get_total_pageviews():
     payload = api_request(
         "/stats/total",
         query={
@@ -111,12 +111,12 @@ def main():
         raise RuntimeError("GOATCOUNTER_SITE_API and GOATCOUNTER_API_KEY are required.")
 
     countries = get_locations()
-    total_visitors = get_total_visitors()
+    total_pageviews = get_total_pageviews()
 
     stats = {
-        "title": "Visitors Around the World",
+        "title": "Pageviews Around the World",
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "total_unique_visitors": total_visitors,
+        "total_pageviews": total_pageviews,
         "total_countries": len(countries),
         "countries": countries,
     }

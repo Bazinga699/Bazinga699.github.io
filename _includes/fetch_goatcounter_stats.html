@@ -19,6 +19,7 @@
     var localSvgMapUrl = '{{ "/assets/vendor/world-map.min.svg" | relative_url }}';
     var localSvgCacheKey = 'visitor-map-svg-v2';
     var hoverModeCache = {};
+    var staticMapTitle = 'Pageviews Around the World';
 
     function hideEmptyState() {
       if (emptyState) {
@@ -96,6 +97,33 @@
       }
 
       return 'rgb(' + interpolate(start.r, end.r) + ', ' + interpolate(start.g, end.g) + ', ' + interpolate(start.b, end.b) + ')';
+    }
+
+    function numericCount(item) {
+      if (!item) {
+        return 0;
+      }
+      return Number(item.pageviews || item.visitors || 0);
+    }
+
+    function totalCount(data) {
+      if (!data) {
+        return 0;
+      }
+      return Number(data.total_pageviews || data.total_unique_visitors || 0);
+    }
+
+    function updatedAtValue(data) {
+      if (!data || !data.updated_at) {
+        return 0;
+      }
+
+      var timestamp = new Date(data.updated_at).getTime();
+      return isNaN(timestamp) ? 0 : timestamp;
+    }
+
+    function newerData(primary, candidate) {
+      return updatedAtValue(candidate) > updatedAtValue(primary) ? candidate : primary;
     }
 
     function setSvgLabel(target, text) {
@@ -294,14 +322,16 @@
         });
 
         (data.countries || []).forEach(function (item) {
-          if (item.visitors > maxVisitors) {
-            maxVisitors = item.visitors;
+          var count = numericCount(item);
+          if (count > maxVisitors) {
+            maxVisitors = count;
           }
         });
 
         (data.countries || []).forEach(function (item) {
-          var color = colorForVisitors(item.visitors, maxVisitors);
-          var label = countryName(item.code) + ': ' + item.visitors.toLocaleString();
+          var count = numericCount(item);
+          var color = colorForVisitors(count, maxVisitors);
+          var label = countryName(item.code) + ': ' + count.toLocaleString() + ' pageviews';
 
           getMapTargets(item.code).forEach(function (targetId) {
             var target = svg.querySelector('#' + targetId);
@@ -319,7 +349,7 @@
       var countries = data.countries || [];
 
       if (mapTitle) {
-        mapTitle.textContent = data.title || 'Visitor Map';
+        mapTitle.textContent = staticMapTitle;
       }
 
       if (mapSubtitle) {
@@ -328,7 +358,7 @@
       }
 
       if (totalVisitors) {
-        totalVisitors.textContent = (data.total_unique_visitors || 0).toLocaleString();
+        totalVisitors.textContent = totalCount(data).toLocaleString();
       }
 
       if (totalCountries) {
@@ -344,7 +374,7 @@
           var value = document.createElement('strong');
 
           label.textContent = countryName(item.code);
-          value.textContent = item.visitors.toLocaleString();
+          value.textContent = numericCount(item).toLocaleString();
 
           listItem.appendChild(label);
           listItem.appendChild(value);
@@ -353,7 +383,7 @@
       }
 
       if (!countries.length) {
-        setEmptyState('No visitor data yet.');
+        setEmptyState('No pageview data yet.');
         return;
       }
 
@@ -372,7 +402,7 @@
 
     loadStats(cdnStatsUrl, function (data) {
       var countries = data.countries || [];
-      var totalVisitorsCount = data.total_unique_visitors || 0;
+      var totalVisitorsCount = totalCount(data);
 
       if (!countries.length && totalVisitorsCount === 0) {
         loadStats(rawStatsUrl + '?t=' + Date.now(), function (freshData) {
@@ -384,6 +414,12 @@
       }
 
       applyData(data);
+      loadStats(rawStatsUrl + '?t=' + Date.now(), function (freshData) {
+        var latestData = newerData(data, freshData);
+        if (latestData !== data) {
+          applyData(latestData);
+        }
+      }, function () {});
     }, function () {
       loadStats(rawStatsUrl + '?t=' + Date.now(), function (data) {
         applyData(data);

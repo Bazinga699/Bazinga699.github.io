@@ -171,7 +171,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 
 <section id="goatcounter-visitor-map" class="visitor-map-section">
   <div class="visitor-map-section__header">
-    <h1 id="goatcounter-map-title">Visitors Around the World</h1>
+    <h1 id="goatcounter-map-title">Pageviews Around the World</h1>
     <p class="visitor-map-section__started-at">Tracking since 2026.03.24</p>
   </div>
 
@@ -180,14 +180,14 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
       <div id="goatcounter-map"></div>
       <div id="goatcounter-map-tooltip" class="visitor-map-section__map-tooltip" style="display: none;"></div>
       <div id="goatcounter-empty-state" class="visitor-map-section__empty-state" style="display: none;">
-        No visitor data yet.
+        No pageview data yet.
       </div>
     </div>
 
     <div class="visitor-map-section__sidebar">
       <div class="visitor-map-section__stats">
         <div class="visitor-map-section__stat-card">
-          <span>Total visitors</span>
+          <span>Total pageviews</span>
           <strong id="goatcounter-total-visitors">0</strong>
         </div>
         <div class="visitor-map-section__stat-card">
@@ -203,5 +203,5 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
     </div>
   </div>
 
-  <p id="goatcounter-map-subtitle" class="visitor-map-section__updated-at">Loading country-level visitor data...</p>
+  <p id="goatcounter-map-subtitle" class="visitor-map-section__updated-at">Loading country-level pageview data...</p>
 </section>
