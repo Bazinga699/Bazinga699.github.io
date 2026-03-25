@@ -18,6 +18,7 @@
     var mapWrap = widget.querySelector('.visitor-map-section__map-wrap');
     var localSvgMapUrl = '{{ "/assets/vendor/world-map.min.svg" | relative_url }}';
     var localSvgCacheKey = 'visitor-map-svg-v2';
+    var hoverModeCache = {};
 
     function hideEmptyState() {
       if (emptyState) {
@@ -145,11 +146,52 @@
       }
     }
 
+    function getHoverModeKey(target) {
+      return (target.id || target.getAttribute('id') || target.tagName || 'node').toLowerCase();
+    }
+
+    function hoverModeForTarget(target) {
+      var key = getHoverModeKey(target);
+      if (hoverModeCache[key]) {
+        return hoverModeCache[key];
+      }
+
+      var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
+      var pathCount = nodes.length;
+      var box;
+
+      try {
+        box = target.getBBox();
+      } catch (error) {
+        box = { width: 0, height: 0 };
+      }
+
+      var width = box.width || 0;
+      var height = box.height || 0;
+      var area = width * height;
+      var minEdge = Math.min(width, height);
+      var maxEdge = Math.max(width, height) || 1;
+      var aspect = maxEdge / Math.max(minEdge, 1);
+      var mode = 'lift';
+
+      if (pathCount > 1 || area < 160 || minEdge < 9 || aspect > 4.5) {
+        mode = 'soft';
+      } else if (area < 1400 || minEdge < 18 || aspect > 2.6) {
+        mode = 'gentle';
+      }
+
+      hoverModeCache[key] = mode;
+      return mode;
+    }
+
     function setHoverState(target, isHovered) {
       var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
+      var hoverMode = hoverModeForTarget(target);
 
       Array.prototype.forEach.call(nodes, function (node) {
-        node.classList.toggle('is-hovered', isHovered);
+        node.classList.toggle('is-hovered', isHovered && hoverMode === 'lift');
+        node.classList.toggle('is-hovered-gentle', isHovered && hoverMode === 'gentle');
+        node.classList.toggle('is-hovered-soft', isHovered && hoverMode === 'soft');
       });
     }
 

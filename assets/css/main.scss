@@ -234,6 +234,17 @@ h1:before, .anchor:before {
     filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.22));
 }
 
+.visitor-map-section__svg path.is-hovered-gentle {
+    transform: scale(1.03);
+    filter: brightness(1.03) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.16));
+}
+
+.visitor-map-section__svg path.is-hovered-soft {
+    filter: brightness(1.06) drop-shadow(0 3px 8px rgba(15, 23, 42, 0.16));
+    stroke: #0f172a !important;
+    stroke-width: 1 !important;
+}
+
 .visitor-map-section__map-tooltip {
     position: absolute;
     z-index: 3;
