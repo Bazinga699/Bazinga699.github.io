@@ -14,6 +14,8 @@
     var countriesList = document.getElementById('goatcounter-country-list');
     var emptyState = document.getElementById('goatcounter-empty-state');
     var mapContainer = document.getElementById('goatcounter-map');
+    var localSvgMapUrl = '{{ "/assets/vendor/world-map.min.svg" | relative_url }}';
+    var localSvgCacheKey = 'visitor-map-svg-v1';
 
     function hideEmptyState() {
       if (emptyState) {
@@ -77,59 +79,119 @@
       return code;
     }
 
-    function ensureGoogleCharts(callback) {
-      if (window.google && google.charts && google.visualization) {
-        callback();
+    function colorForVisitors(value, maxValue) {
+      if (!maxValue || value <= 0) {
+        return '#eef2f7';
+      }
+
+      var ratio = value / maxValue;
+      var start = { r: 191, g: 219, b: 254 };
+      var end = { r: 29, g: 78, b: 216 };
+
+      function interpolate(channelStart, channelEnd) {
+        return Math.round(channelStart + (channelEnd - channelStart) * ratio);
+      }
+
+      return 'rgb(' + interpolate(start.r, end.r) + ', ' + interpolate(start.g, end.g) + ', ' + interpolate(start.b, end.b) + ')';
+    }
+
+    function setSvgTitle(target, text) {
+      var svgNamespace = 'http://www.w3.org/2000/svg';
+      var title = target.querySelector('title');
+      if (!title) {
+        title = document.createElementNS(svgNamespace, 'title');
+        target.insertBefore(title, target.firstChild);
+      }
+      title.textContent = text;
+    }
+
+    function applyFill(target, color, label) {
+      var nodes = target.tagName.toLowerCase() === 'g' ? target.querySelectorAll('path') : [target];
+
+      Array.prototype.forEach.call(nodes, function (node) {
+        node.style.fill = color;
+        node.style.stroke = '#ffffff';
+        node.style.strokeWidth = '0.7';
+        setSvgTitle(node, label);
+      });
+    }
+
+    function getMapTargets(code) {
+      var normalized = (code || '').toLowerCase();
+      if (normalized === 'cn') {
+        return ['cn', 'tw'];
+      }
+      return [normalized];
+    }
+
+    function injectSvgMarkup(markup) {
+      mapContainer.innerHTML = markup;
+      var svg = mapContainer.querySelector('svg');
+
+      if (svg) {
+        svg.classList.add('visitor-map-section__svg');
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      }
+
+      return svg;
+    }
+
+    function ensureLocalSvgMap(onSuccess, onError) {
+      var existingSvg = mapContainer.querySelector('svg');
+      if (existingSvg) {
+        onSuccess(existingSvg);
         return;
       }
 
-      var existing = document.getElementById('google-charts-loader');
-      if (existing) {
-        existing.addEventListener('load', callback, { once: true });
-        return;
-      }
+      try {
+        var cachedMarkup = window.localStorage && localStorage.getItem(localSvgCacheKey);
+        if (cachedMarkup) {
+          onSuccess(injectSvgMarkup(cachedMarkup));
+          return;
+        }
+      } catch (error) {}
 
-      var script = document.createElement('script');
-      script.id = 'google-charts-loader';
-      script.src = 'https://www.gstatic.com/charts/loader.js';
-      script.async = true;
-      script.onload = callback;
-      document.head.appendChild(script);
+      $.get(localSvgMapUrl, function (markup) {
+        try {
+          if (window.localStorage) {
+            localStorage.setItem(localSvgCacheKey, markup);
+          }
+        } catch (error) {}
+
+        onSuccess(injectSvgMarkup(markup));
+      }, 'text').fail(onError);
     }
 
     function renderMap(data) {
-      ensureGoogleCharts(function () {
-        google.charts.load('current', {
-          packages: ['geochart']
+      ensureLocalSvgMap(function (svg) {
+        var paths = svg.querySelectorAll('path');
+        var maxVisitors = 0;
+
+        Array.prototype.forEach.call(paths, function (path) {
+          path.style.fill = '#eef2f7';
+          path.style.stroke = '#ffffff';
+          path.style.strokeWidth = '0.7';
         });
 
-        google.charts.setOnLoadCallback(function () {
-          var chartData = new google.visualization.DataTable();
-          chartData.addColumn('string', 'Country');
-          chartData.addColumn('number', 'Visitors');
+        (data.countries || []).forEach(function (item) {
+          if (item.visitors > maxVisitors) {
+            maxVisitors = item.visitors;
+          }
+        });
 
-          (data.countries || []).forEach(function (item) {
-            if (item.code && item.visitors > 0) {
-              chartData.addRow([item.code, item.visitors]);
-            }
-          });
+        (data.countries || []).forEach(function (item) {
+          var color = colorForVisitors(item.visitors, maxVisitors);
+          var label = countryName(item.code) + ': ' + item.visitors.toLocaleString();
 
-          var chart = new google.visualization.GeoChart(mapContainer);
-          chart.draw(chartData, {
-            backgroundColor: 'transparent',
-            datalessRegionColor: '#f3f4f6',
-            defaultColor: '#c7d2fe',
-            colorAxis: {
-              colors: ['#bfdbfe', '#60a5fa', '#1d4ed8']
-            },
-            legend: 'none',
-            tooltip: {
-              textStyle: {
-                color: '#111827'
-              }
+          getMapTargets(item.code).forEach(function (targetId) {
+            var target = svg.querySelector('#' + targetId);
+            if (target) {
+              applyFill(target, color, label);
             }
           });
         });
+      }, function () {
+        setEmptyState('Map asset failed to load.');
       });
     }
 
