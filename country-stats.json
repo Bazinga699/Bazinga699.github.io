@@ -1,0 +1,16 @@
+{
+  "title": "Pageviews Around the World",
+  "updated_at": "2026-03-27T09:08:10.721019+00:00",
+  "total_pageviews": 19,
+  "total_countries": 2,
+  "countries": [
+    {
+      "code": "CN",
+      "pageviews": 15
+    },
+    {
+      "code": "US",
+      "pageviews": 4
+    }
+  ]
+}
