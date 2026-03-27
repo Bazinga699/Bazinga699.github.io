@@ -9,7 +9,7 @@ import urllib.request
 from datetime import datetime, timezone
 
 
-API_BASE = os.environ.get("GOATCOUNTER_SITE_API", "").rstrip("/")
+RAW_API_BASE = os.environ.get("GOATCOUNTER_SITE_API", "")
 API_TOKEN = os.environ.get("GOATCOUNTER_API_KEY", "")
 ROOT_PATHS = [
     path.strip()
@@ -24,6 +24,19 @@ COUNTRY_CODE_ALIASES = {
     "MO": "CN",
     "TW": "CN",
 }
+
+
+def normalize_api_base(base):
+    base = base.strip().rstrip("/")
+    if not base:
+        return ""
+    if base.endswith("/api/v0"):
+        return base
+    # Accept either the site root or the explicit API base in the secret.
+    return f"{base}/api/v0"
+
+
+API_BASE = normalize_api_base(RAW_API_BASE)
 
 
 def api_request(path, query=None):
@@ -41,8 +54,17 @@ def api_request(path, query=None):
         method="GET",
     )
 
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        if error.code == 404:
+            raise RuntimeError(
+                f"GoatCounter API endpoint was not found: {url}. "
+                "Check GOATCOUNTER_SITE_API; it should usually look like "
+                "https://<your-site>.goatcounter.com/api/v0"
+            ) from error
+        raise RuntimeError(f"GoatCounter API request failed ({error.code}): {url}") from error
 
 
 def code_from_location(stat):
