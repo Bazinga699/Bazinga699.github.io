@@ -2,6 +2,7 @@ name: Update GoatCounter Visitor Map
 
 on:
   workflow_dispatch:
+  page_build:
   schedule:
     - cron: '15 8 * * *'
 
