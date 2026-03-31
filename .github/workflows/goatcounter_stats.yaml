@@ -25,7 +25,6 @@ jobs:
         env:
           GOATCOUNTER_SITE_API: ${{ secrets.GOATCOUNTER_SITE_API }}
           GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
-          GOATCOUNTER_ROOT_PATHS: "/,/index.html"
 
       - name: Publish stats branch
         run: |

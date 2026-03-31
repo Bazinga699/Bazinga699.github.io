@@ -17,7 +17,7 @@ RAW_API_BASE = os.environ.get("GOATCOUNTER_SITE_API", "")
 API_TOKEN = os.environ.get("GOATCOUNTER_API_KEY", "")
 ROOT_PATHS = [
     path.strip()
-    for path in os.environ.get("GOATCOUNTER_ROOT_PATHS", "/,/index.html").split(",")
+    for path in os.environ.get("GOATCOUNTER_ROOT_PATHS", "").split(",")
     if path.strip()
 ]
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "results")
@@ -106,6 +106,14 @@ def code_from_location(stat):
     return COUNTRY_CODE_ALIASES.get(value[:2], value[:2])
 
 
+def stats_query(base_query):
+    query = dict(base_query)
+    if ROOT_PATHS:
+        query["path_by_name"] = "true"
+        query["include_paths"] = ROOT_PATHS
+    return query
+
+
 def get_locations():
     stats = []
     offset = 0
@@ -113,13 +121,11 @@ def get_locations():
     while True:
         payload = api_json_request(
             "/stats/locations",
-            query={
+            query=stats_query({
                 "start": ALL_TIME_START,
                 "limit": 100,
                 "offset": offset,
-                "path_by_name": "true",
-                "include_paths": ROOT_PATHS,
-            },
+            }),
         )
 
         stats.extend(payload.get("stats", []))
@@ -142,11 +148,9 @@ def get_locations():
 def get_total_pageviews():
     payload = api_json_request(
         "/stats/total",
-        query={
+        query=stats_query({
             "start": ALL_TIME_START,
-            "path_by_name": "true",
-            "include_paths": ROOT_PATHS,
-        },
+        }),
     )
     return int(payload.get("total", 0) or 0)
 
@@ -192,6 +196,9 @@ def detect_field(row, suffix):
 
 
 def is_root_path(path_value):
+    if not ROOT_PATHS:
+        return True
+
     normalized = normalize_path(path_value)
     candidates = {normalized, normalized.rstrip("/")}
 
