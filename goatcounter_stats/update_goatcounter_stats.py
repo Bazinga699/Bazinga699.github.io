@@ -155,6 +155,13 @@ def get_total_pageviews():
     return int(payload.get("total", 0) or 0)
 
 
+def summarize_counts(total_pageviews, countries):
+    return (
+        f"total_pageviews={total_pageviews}, "
+        f"total_countries={len(countries)}"
+    )
+
+
 def wait_for_export(export_id):
     for _ in range(60):
         payload = api_json_request(f"/export/{export_id}")
@@ -264,7 +271,31 @@ def get_pageviews_from_export():
 
 def collect_pageview_stats():
     try:
-        return get_total_pageviews(), get_locations()
+        total_pageviews = get_total_pageviews()
+        countries = get_locations()
+        print(
+            "GoatCounter stats API result:",
+            summarize_counts(total_pageviews, countries),
+            file=sys.stderr,
+        )
+
+        # Some GoatCounter setups return an empty stats payload even though the
+        # dashboard and export endpoints have data. Fall back to the export in
+        # that case instead of publishing an all-zero JSON.
+        if total_pageviews == 0 and not countries:
+            print(
+                "Stats API returned an empty result; falling back to GoatCounter export.",
+                file=sys.stderr,
+            )
+            export_total_pageviews, export_countries = get_pageviews_from_export()
+            print(
+                "GoatCounter export result:",
+                summarize_counts(export_total_pageviews, export_countries),
+                file=sys.stderr,
+            )
+            return export_total_pageviews, export_countries
+
+        return total_pageviews, countries
     except GoatCounterAPIError as error:
         if error.status_code != 404:
             raise
@@ -272,13 +303,20 @@ def collect_pageview_stats():
             "Stats API returned 404; falling back to GoatCounter export.",
             file=sys.stderr,
         )
-        return get_pageviews_from_export()
+        total_pageviews, countries = get_pageviews_from_export()
+        print(
+            "GoatCounter export result:",
+            summarize_counts(total_pageviews, countries),
+            file=sys.stderr,
+        )
+        return total_pageviews, countries
 
 
 def main():
     if not API_BASE or not API_TOKEN:
         raise RuntimeError("GOATCOUNTER_SITE_API and GOATCOUNTER_API_KEY are required.")
 
+    print(f"Using GoatCounter API base: {API_BASE}", file=sys.stderr)
     total_pageviews, countries = collect_pageview_stats()
 
     stats = {
