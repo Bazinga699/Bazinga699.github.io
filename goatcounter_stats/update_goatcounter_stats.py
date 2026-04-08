@@ -162,6 +162,29 @@ def summarize_counts(total_pageviews, countries):
     )
 
 
+def export_has_useful_data(total_pageviews, countries):
+    return total_pageviews > 0 or bool(countries)
+
+
+def fallback_to_export(api_total_pageviews, api_countries, reason):
+    print(reason, file=sys.stderr)
+    export_total_pageviews, export_countries = get_pageviews_from_export()
+    print(
+        "GoatCounter export result:",
+        summarize_counts(export_total_pageviews, export_countries),
+        file=sys.stderr,
+    )
+
+    if export_has_useful_data(export_total_pageviews, export_countries):
+        return export_total_pageviews, export_countries
+
+    print(
+        "GoatCounter export was also empty; keeping stats API result.",
+        file=sys.stderr,
+    )
+    return api_total_pageviews, api_countries
+
+
 def wait_for_export(export_id):
     for _ in range(60):
         payload = api_json_request(f"/export/{export_id}")
@@ -279,37 +302,26 @@ def collect_pageview_stats():
             file=sys.stderr,
         )
 
-        # Some GoatCounter setups return an empty stats payload even though the
-        # dashboard and export endpoints have data. Fall back to the export in
-        # that case instead of publishing an all-zero JSON.
-        if total_pageviews == 0 and not countries:
-            print(
-                "Stats API returned an empty result; falling back to GoatCounter export.",
-                file=sys.stderr,
+        # Some GoatCounter setups return partial stats payloads, such as a
+        # non-zero total with no country breakdown. The export endpoint is more
+        # reliable for publishing the map data, so prefer it when the stats API
+        # result is empty or incomplete.
+        if total_pageviews == 0 or not countries:
+            return fallback_to_export(
+                total_pageviews,
+                countries,
+                "Stats API returned incomplete data; falling back to GoatCounter export.",
             )
-            export_total_pageviews, export_countries = get_pageviews_from_export()
-            print(
-                "GoatCounter export result:",
-                summarize_counts(export_total_pageviews, export_countries),
-                file=sys.stderr,
-            )
-            return export_total_pageviews, export_countries
 
         return total_pageviews, countries
     except GoatCounterAPIError as error:
         if error.status_code != 404:
             raise
-        print(
+        return fallback_to_export(
+            0,
+            [],
             "Stats API returned 404; falling back to GoatCounter export.",
-            file=sys.stderr,
         )
-        total_pageviews, countries = get_pageviews_from_export()
-        print(
-            "GoatCounter export result:",
-            summarize_counts(total_pageviews, countries),
-            file=sys.stderr,
-        )
-        return total_pageviews, countries
 
 
 def main():
