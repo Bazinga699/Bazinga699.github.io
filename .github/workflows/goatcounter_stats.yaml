@@ -20,12 +20,23 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Fetch previous published stats
+        run: |
+          mkdir -p goatcounter_stats/results
+          git fetch origin goatcounter-stats || true
+          if git show origin/goatcounter-stats:country-stats.json > goatcounter_stats/results/previous-country-stats.json 2>/dev/null; then
+            echo "Found previous published GoatCounter stats."
+          else
+            echo "No previously published GoatCounter stats found."
+          fi
+
       - name: Generate visitor stats
         run: |
           python3 goatcounter_stats/update_goatcounter_stats.py
         env:
           GOATCOUNTER_SITE_API: ${{ secrets.GOATCOUNTER_SITE_API }}
           GOATCOUNTER_API_KEY: ${{ secrets.GOATCOUNTER_API_KEY }}
+          GOATCOUNTER_PREVIOUS_STATS_PATH: goatcounter_stats/results/previous-country-stats.json
 
       - name: Publish stats branch
         run: |

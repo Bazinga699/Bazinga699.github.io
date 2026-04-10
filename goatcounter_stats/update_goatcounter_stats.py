@@ -20,14 +20,21 @@ ROOT_PATHS = [
     for path in os.environ.get("GOATCOUNTER_ROOT_PATHS", "").split(",")
     if path.strip()
 ]
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+CONFIG_PATH = os.path.join(REPO_ROOT, "_config.yml")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "results")
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "country-stats.json")
+PREVIOUS_STATS_PATH = os.environ.get(
+    "GOATCOUNTER_PREVIOUS_STATS_PATH",
+    os.path.join(OUTPUT_DIR, "previous-country-stats.json"),
+)
 ALL_TIME_START = "2000-01-01T00:00:00Z"
 COUNTRY_CODE_ALIASES = {
     "HK": "CN",
     "MO": "CN",
     "TW": "CN",
 }
+SUPPORTED_EXPORT_VERSIONS = {1}
 
 
 class GoatCounterAPIError(RuntimeError):
@@ -48,6 +55,38 @@ def normalize_api_base(base):
 
 
 API_BASE = normalize_api_base(RAW_API_BASE)
+
+
+def load_expected_site_code():
+    try:
+        with open(CONFIG_PATH, encoding="utf-8") as config_file:
+            for raw_line in config_file:
+                line = raw_line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if not line.startswith("goatcounter_code"):
+                    continue
+                _, _, value = line.partition(":")
+                return value.strip().strip('"').strip("'")
+    except OSError:
+        return ""
+
+    return ""
+
+
+def validate_api_base():
+    expected_code = load_expected_site_code()
+    if not expected_code:
+        return
+
+    hostname = (urllib.parse.urlparse(API_BASE).hostname or "").lower()
+    expected_hostname = f"{expected_code}.goatcounter.com"
+
+    if hostname.endswith(".goatcounter.com") and hostname != expected_hostname:
+        raise RuntimeError(
+            "GOATCOUNTER_SITE_API does not match _config.yml goatcounter_code: "
+            f"expected {expected_hostname}, got {hostname or '<empty>'}."
+        )
 
 
 def api_request(path, query=None, method="GET", data=None, accept="application/json"):
@@ -218,6 +257,13 @@ def decode_csv_bytes(raw_bytes):
     return raw_bytes.decode("utf-8")
 
 
+def export_format_version(path_field):
+    prefix, separator, _ = path_field.partition(",")
+    if separator and prefix.isdigit():
+        return int(prefix)
+    return 1
+
+
 def detect_field(row, suffix):
     for key in row.keys():
         if key.endswith(suffix):
@@ -267,6 +313,11 @@ def get_pageviews_from_export():
 
     sample = rows[0]
     path_field = detect_field(sample, "Path")
+    export_version = export_format_version(path_field)
+    if export_version not in SUPPORTED_EXPORT_VERSIONS:
+        raise RuntimeError(
+            f"Unsupported GoatCounter export CSV version {export_version}."
+        )
     event_field = detect_field(sample, "Event")
     location_field = detect_field(sample, "Location")
     bot_field = detect_field(sample, "Bot")
@@ -324,14 +375,37 @@ def collect_pageview_stats():
         )
 
 
-def main():
-    if not API_BASE or not API_TOKEN:
-        raise RuntimeError("GOATCOUNTER_SITE_API and GOATCOUNTER_API_KEY are required.")
+def normalize_country_entries(countries):
+    normalized = []
+    for item in countries or []:
+        code = (item.get("code") or "").strip().upper()
+        count = int(item.get("pageviews") or item.get("visitors") or 0)
+        if code and count > 0:
+            normalized.append({"code": code, "pageviews": count})
 
-    print(f"Using GoatCounter API base: {API_BASE}", file=sys.stderr)
-    total_pageviews, countries = collect_pageview_stats()
+    normalized.sort(key=lambda item: (-item["pageviews"], item["code"]))
+    return normalized
 
-    stats = {
+
+def normalize_stats_payload(payload):
+    countries = normalize_country_entries(payload.get("countries"))
+    total_pageviews = int(
+        payload.get("total_pageviews")
+        or payload.get("total_unique_visitors")
+        or 0
+    )
+
+    return {
+        "title": payload.get("title") or "Pageviews Around the World",
+        "updated_at": payload.get("updated_at") or "",
+        "total_pageviews": total_pageviews,
+        "total_countries": len(countries),
+        "countries": countries,
+    }
+
+
+def build_stats_payload(total_pageviews, countries):
+    return {
         "title": "Pageviews Around the World",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "total_pageviews": total_pageviews,
@@ -339,10 +413,48 @@ def main():
         "countries": countries,
     }
 
+
+def load_previous_stats():
+    if not PREVIOUS_STATS_PATH or not os.path.exists(PREVIOUS_STATS_PATH):
+        return "", None
+
+    try:
+        with open(PREVIOUS_STATS_PATH, encoding="utf-8") as previous_file:
+            raw = previous_file.read()
+        return raw, normalize_stats_payload(json.loads(raw))
+    except (OSError, json.JSONDecodeError, ValueError):
+        return "", None
+
+
+def main():
+    if not API_BASE or not API_TOKEN:
+        raise RuntimeError("GOATCOUNTER_SITE_API and GOATCOUNTER_API_KEY are required.")
+
+    validate_api_base()
+    print(f"Using GoatCounter API base: {API_BASE}", file=sys.stderr)
+    total_pageviews, countries = collect_pageview_stats()
+    previous_raw, previous_stats = load_previous_stats()
+
+    if (
+        not export_has_useful_data(total_pageviews, countries)
+        and previous_stats
+        and export_has_useful_data(
+            previous_stats["total_pageviews"],
+            previous_stats["countries"],
+        )
+    ):
+        print(
+            "Fresh GoatCounter stats were empty; keeping the previous published stats.",
+            file=sys.stderr,
+        )
+        output_text = previous_raw if previous_raw.endswith("\n") else f"{previous_raw}\n"
+    else:
+        stats = build_stats_payload(total_pageviews, countries)
+        output_text = json.dumps(stats, ensure_ascii=True, indent=2) + "\n"
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as output_file:
-        json.dump(stats, output_file, ensure_ascii=True, indent=2)
-        output_file.write("\n")
+        output_file.write(output_text)
 
 
 if __name__ == "__main__":

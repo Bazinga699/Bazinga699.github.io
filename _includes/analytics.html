@@ -13,8 +13,95 @@
 {% endif %}
 
 {% if site.goatcounter_code and site.goatcounter_code != "" %}
-  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
-          async src="https://gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var endpoint = 'https://{{ site.goatcounter_code }}.goatcounter.com/count';
+      var pendingRequests = window.__goatcounterRequests = window.__goatcounterRequests || [];
+
+      function canonicalPath() {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical || !canonical.href) {
+          return '';
+        }
+
+        try {
+          var canonicalUrl = new URL(canonical.href, window.location.href);
+          if (canonicalUrl.hostname === window.location.hostname) {
+            return canonicalUrl.pathname || '/';
+          }
+        } catch (error) {}
+
+        return '';
+      }
+
+      function pagePath() {
+        return canonicalPath() || window.location.pathname || '/';
+      }
+
+      function pageQuery() {
+        return window.location.search ? window.location.search.slice(1) : '';
+      }
+
+      function screenSize() {
+        if (!window.screen || !screen.width || !screen.height) {
+          return '';
+        }
+
+        return [
+          screen.width,
+          screen.height,
+          window.devicePixelRatio || 1
+        ].join(',');
+      }
+
+      function sendPageview() {
+        var params = [
+          'p=' + encodeURIComponent(pagePath()),
+          't=' + encodeURIComponent(document.title || '{{ site.title | escape }}'),
+          'rnd=' + Date.now()
+        ];
+        var query = pageQuery();
+        var referrer = document.referrer || '';
+        var screenValue = screenSize();
+        var image = new Image(1, 1);
+
+        // Use GoatCounter's stable /count pixel directly so tracking does not
+        // depend on the external gc.zgo.at script host.
+        if (query) {
+          params.push('q=' + encodeURIComponent(query));
+        }
+        if (referrer) {
+          params.push('r=' + encodeURIComponent(referrer));
+        }
+        if (screenValue) {
+          params.push('s=' + encodeURIComponent(screenValue));
+        }
+
+        image.alt = '';
+        image.referrerPolicy = 'strict-origin-when-cross-origin';
+        image.onload = image.onerror = function () {
+          var index = pendingRequests.indexOf(image);
+          if (index !== -1) {
+            pendingRequests.splice(index, 1);
+          }
+        };
+        pendingRequests.push(image);
+        image.src = endpoint + '?' + params.join('&');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', sendPageview, { once: true });
+      } else {
+        sendPageview();
+      }
+    })();
+  </script>
+  <noscript>
+    <img src="https://{{ site.goatcounter_code }}.goatcounter.com/count?p={{ page.url | default: '/' | uri_escape }}&t={{ page.title | default: site.title | uri_escape }}&rnd={{ site.time | date: '%s' }}"
+         alt=""
+         referrerpolicy="strict-origin-when-cross-origin"
+         style="display: none;">
+  </noscript>
 {% endif %}
 
 {% endif %}
