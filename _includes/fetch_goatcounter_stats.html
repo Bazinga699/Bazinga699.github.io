@@ -354,7 +354,13 @@
 
       if (mapSubtitle) {
         var updatedAt = formatDate(data.updated_at);
-        mapSubtitle.textContent = updatedAt ? 'Updated ' + updatedAt + ' (Beijing Time)' : 'Country-level visitor distribution';
+        var checkedAt = formatDate(data.checked_at);
+
+        if (data.source_status === 'using_previous_stats' && checkedAt && updatedAt) {
+          mapSubtitle.textContent = 'Checked ' + checkedAt + '; latest valid data ' + updatedAt + ' (Beijing Time)';
+        } else {
+          mapSubtitle.textContent = updatedAt ? 'Updated ' + updatedAt + ' (Beijing Time)' : 'Country-level visitor distribution';
+        }
       }
 
       if (totalVisitors) {

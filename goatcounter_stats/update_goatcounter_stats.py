@@ -35,6 +35,8 @@ COUNTRY_CODE_ALIASES = {
     "TW": "CN",
 }
 SUPPORTED_EXPORT_VERSIONS = {1}
+MAX_API_ATTEMPTS = 3
+RETRYABLE_STATUS_CODES = {404, 429, 500, 502, 503, 504}
 
 
 class GoatCounterAPIError(RuntimeError):
@@ -48,10 +50,29 @@ def normalize_api_base(base):
     base = base.strip().rstrip("/")
     if not base:
         return ""
-    if base.endswith("/api/v0"):
-        return base
-    # Accept either the site root or the explicit API base in the secret.
-    return f"{base}/api/v0"
+
+    if "://" not in base:
+        base = f"https://{base}"
+
+    parsed = urllib.parse.urlparse(base)
+    path = parsed.path.rstrip("/")
+    api_marker = "/api/v0"
+
+    if path == api_marker or path.endswith(api_marker):
+        api_path = path[: path.rfind(api_marker) + len(api_marker)]
+    elif api_marker in path:
+        api_path = path[: path.find(api_marker) + len(api_marker)]
+    else:
+        api_path = api_marker
+
+    return urllib.parse.urlunparse((
+        parsed.scheme or "https",
+        parsed.netloc,
+        api_path,
+        "",
+        "",
+        "",
+    ))
 
 
 API_BASE = normalize_api_base(RAW_API_BASE)
@@ -76,17 +97,48 @@ def load_expected_site_code():
 
 def validate_api_base():
     expected_code = load_expected_site_code()
+    parsed = urllib.parse.urlparse(API_BASE)
+    hostname = (parsed.hostname or "").lower()
+
+    if not hostname:
+        raise RuntimeError("GOATCOUNTER_SITE_API must include a hostname.")
+
+    if parsed.path.rstrip("/") != "/api/v0":
+        raise RuntimeError(
+            "GOATCOUNTER_SITE_API must resolve to the GoatCounter API root "
+            f"(/api/v0), got {parsed.path or '<empty>'}."
+        )
+
     if not expected_code:
         return
 
-    hostname = (urllib.parse.urlparse(API_BASE).hostname or "").lower()
     expected_hostname = f"{expected_code}.goatcounter.com"
 
-    if hostname.endswith(".goatcounter.com") and hostname != expected_hostname:
+    if (
+        hostname in ("goatcounter.com", "www.goatcounter.com")
+        or hostname.endswith(".goatcounter.com")
+    ) and hostname != expected_hostname:
         raise RuntimeError(
             "GOATCOUNTER_SITE_API does not match _config.yml goatcounter_code: "
             f"expected {expected_hostname}, got {hostname or '<empty>'}."
         )
+
+
+def describe_api_base():
+    parsed = urllib.parse.urlparse(API_BASE)
+    return f"{parsed.hostname or '<empty>'}{parsed.path.rstrip('/') or '/'}"
+
+
+def http_error_detail(error):
+    try:
+        body = error.read().decode("utf-8", errors="replace").strip()
+    except OSError:
+        body = ""
+
+    if not body:
+        return ""
+
+    return f" Response body: {body[:500]}"
 
 
 def api_request(path, query=None, method="GET", data=None, accept="application/json"):
@@ -106,23 +158,39 @@ def api_request(path, query=None, method="GET", data=None, accept="application/j
         method=method,
     )
 
-    try:
-        with urllib.request.urlopen(request, timeout=60) as response:
-            return response.read()
-    except urllib.error.HTTPError as error:
-        if error.code == 404:
+    for attempt in range(1, MAX_API_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            detail = http_error_detail(error)
+            if (
+                error.code in RETRYABLE_STATUS_CODES
+                and attempt < MAX_API_ATTEMPTS
+            ):
+                print(
+                    f"GoatCounter API request failed ({error.code}) on attempt "
+                    f"{attempt}/{MAX_API_ATTEMPTS}: {url}.{detail} Retrying...",
+                    file=sys.stderr,
+                )
+                time.sleep(attempt * 5)
+                continue
+
+            if error.code == 404:
+                raise GoatCounterAPIError(
+                    error.code,
+                    url,
+                    f"GoatCounter API endpoint was not found: {url}.{detail} "
+                    "Check GOATCOUNTER_SITE_API; it should resolve to "
+                    "https://<your-site>.goatcounter.com/api/v0"
+                ) from error
             raise GoatCounterAPIError(
                 error.code,
                 url,
-                f"GoatCounter API endpoint was not found: {url}. "
-                "Check GOATCOUNTER_SITE_API; it should usually look like "
-                "https://<your-site>.goatcounter.com/api/v0"
+                f"GoatCounter API request failed ({error.code}): {url}.{detail}",
             ) from error
-        raise GoatCounterAPIError(
-            error.code,
-            url,
-            f"GoatCounter API request failed ({error.code}): {url}",
-        ) from error
+
+    raise RuntimeError(f"GoatCounter API request failed after retries: {url}")
 
 
 def api_json_request(path, query=None, method="GET", data=None):
@@ -371,7 +439,7 @@ def collect_pageview_stats():
         return fallback_to_export(
             0,
             [],
-            "Stats API returned 404; falling back to GoatCounter export.",
+            f"{error} Falling back to GoatCounter export.",
         )
 
 
@@ -398,6 +466,8 @@ def normalize_stats_payload(payload):
     return {
         "title": payload.get("title") or "Pageviews Around the World",
         "updated_at": payload.get("updated_at") or "",
+        "checked_at": payload.get("checked_at") or payload.get("updated_at") or "",
+        "source_status": payload.get("source_status") or "fresh",
         "total_pageviews": total_pageviews,
         "total_countries": len(countries),
         "countries": countries,
@@ -405,9 +475,12 @@ def normalize_stats_payload(payload):
 
 
 def build_stats_payload(total_pageviews, countries):
+    checked_at = datetime.now(timezone.utc).isoformat()
     return {
         "title": "Pageviews Around the World",
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "updated_at": checked_at,
+        "checked_at": checked_at,
+        "source_status": "fresh",
         "total_pageviews": total_pageviews,
         "total_countries": len(countries),
         "countries": countries,
@@ -431,7 +504,7 @@ def main():
         raise RuntimeError("GOATCOUNTER_SITE_API and GOATCOUNTER_API_KEY are required.")
 
     validate_api_base()
-    print(f"Using GoatCounter API base: {API_BASE}", file=sys.stderr)
+    print(f"Using GoatCounter API base: {describe_api_base()}", file=sys.stderr)
     total_pageviews, countries = collect_pageview_stats()
     previous_raw, previous_stats = load_previous_stats()
 
@@ -447,7 +520,10 @@ def main():
             "Fresh GoatCounter stats were empty; keeping the previous published stats.",
             file=sys.stderr,
         )
-        output_text = previous_raw if previous_raw.endswith("\n") else f"{previous_raw}\n"
+        stats = dict(previous_stats)
+        stats["checked_at"] = datetime.now(timezone.utc).isoformat()
+        stats["source_status"] = "using_previous_stats"
+        output_text = json.dumps(stats, ensure_ascii=True, indent=2) + "\n"
     else:
         stats = build_stats_payload(total_pageviews, countries)
         output_text = json.dumps(stats, ensure_ascii=True, indent=2) + "\n"
