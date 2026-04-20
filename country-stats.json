@@ -1,0 +1,34 @@
+{
+  "title": "Pageviews Around the World",
+  "updated_at": "2026-04-20T10:09:21.690328+00:00",
+  "checked_at": "2026-04-20T10:09:21.690328+00:00",
+  "source_status": "fresh",
+  "total_pageviews": 62,
+  "total_countries": 6,
+  "countries": [
+    {
+      "code": "CN",
+      "pageviews": 36
+    },
+    {
+      "code": "US",
+      "pageviews": 20
+    },
+    {
+      "code": "PL",
+      "pageviews": 2
+    },
+    {
+      "code": "SG",
+      "pageviews": 2
+    },
+    {
+      "code": "JP",
+      "pageviews": 1
+    },
+    {
+      "code": "KR",
+      "pageviews": 1
+    }
+  ]
+}
