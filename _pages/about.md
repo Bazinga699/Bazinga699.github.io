@@ -146,20 +146,7 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/PVLR.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**PVLR: Prompt-driven Visual-Linguistic Representation Learning for Multi-Label Image Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:MXK_kJrjxJIC'></span></strong>
-
-*Hao Tan, Zichang Tan, **<u>Jun Li</u>**, Jun Wan, Zhen Lei*
-
-
-[[**PDF**]](https://arxiv.org/pdf/2401.17881)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TNNLS 2025</div><img src='images/UBG.png' alt="sym" width="500" height="200"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TNNLS 2025</div><img src='images/UBG.jpeg' alt="sym" width="500" height="200"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <big>**UBG: An Unreal BattleGround Benchmark With Object-Aware Hierarchical Proximal Policy Optimization**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:Zph67rFs4hoC'></span></strong>
