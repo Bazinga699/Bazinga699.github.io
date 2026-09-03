@@ -1,5 +1,5 @@
 <script>
-  $(document).ready(function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var widget = document.getElementById('goatcounter-visitor-map');
     if (!widget) {
       return;
@@ -246,6 +246,9 @@
           setHoverState(target, false);
           hideTooltip();
         };
+        node.onpointerdown = function (event) {
+          if (event.pointerType === 'touch') showTooltip(event, label);
+        };
       });
     }
 
@@ -299,7 +302,7 @@
         }
       } catch (error) {}
 
-      $.get(localSvgMapUrl, function (markup) {
+      fetchResource(localSvgMapUrl, 'text').then(function (markup) {
         try {
           if (window.localStorage) {
             localStorage.setItem(localSvgCacheKey, markup);
@@ -307,7 +310,7 @@
         } catch (error) {}
 
         onSuccess(injectSvgMarkup(markup));
-      }, 'text').fail(onError);
+      }).catch(onError);
     }
 
     function renderMap(data) {
@@ -402,8 +405,17 @@
       renderMap(data);
     }
 
+    function fetchResource(url, type) {
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, 8000);
+      return fetch(url, { signal: controller.signal }).then(function (response) {
+        if (!response.ok) throw new Error('Unable to load visitor data');
+        return type === 'text' ? response.text() : response.json();
+      }).finally(function () { clearTimeout(timer); });
+    }
+
     function loadStats(url, onSuccess, onError) {
-      $.getJSON(url, onSuccess).fail(onError);
+      fetchResource(url, 'json').then(onSuccess).catch(onError);
     }
 
     loadStats(cdnStatsUrl, function (data) {
@@ -430,7 +442,7 @@
       loadStats(rawStatsUrl + '?t=' + Date.now(), function (data) {
         applyData(data);
       }, function () {
-      setEmptyState('Waiting for GoatCounter stats. Add the GoatCounter secrets and let the workflow generate the JSON file.');
+        setEmptyState('Visitor statistics are temporarily unavailable. Please try again later.');
       });
     });
   });

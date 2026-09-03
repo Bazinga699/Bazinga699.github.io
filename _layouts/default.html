@@ -1,5 +1,4 @@
 ---
-layout: compress
 ---
 
 <!doctype html>
@@ -11,10 +10,10 @@ layout: compress
 
   <body>
 
-    {% include browser-upgrade.html %}
+    <a class="skip-link" href="#main">Skip to content</a>
     {% include masthead.html %}
 
-    <div id="main" role="main">
+    <main id="main" tabindex="-1">
       {% include sidebar.html %}
     
       <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
@@ -25,7 +24,7 @@ layout: compress
           </section>
         </div>
       </article>
-    </div>
+    </main>
 
     {% include scripts.html %}
 

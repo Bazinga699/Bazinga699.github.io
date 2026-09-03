@@ -1,0 +1,19 @@
+{% for paper in site.data.publications %}
+<article class="paper-box">
+  <div class="paper-box-image">
+    <a href="{{ paper.image_original | relative_url }}" aria-label="View figure for {{ paper.title | escape }}">
+      <img src="{{ paper.image | relative_url }}" srcset="{{ paper.image | relative_url }} 480w, {{ paper.image_large | relative_url }} 960w" sizes="(max-width: 703px) calc(100vw - 4rem), (max-width: 1023px) 240px, 260px" alt="Overview of {{ paper.title | escape }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy" decoding="async">
+    </a>
+  </div>
+  <div class="paper-box-text">
+    <div class="paper-venue">{{ paper.venue }}</div>
+    <h3>{{ paper.title }}</h3>
+    <div class="paper-authors">{{ paper.authors | markdownify }}</div>
+    <div class="paper-links">
+      {% for link in paper.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+      <span class="show_paper_citations" data="{{ paper.scholar_id }}" hidden></span>
+    </div>
+  </div>
+</article>
+{% endfor %}
+<p class="publication-note">* Equal contribution.</p>

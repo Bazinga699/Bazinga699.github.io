@@ -8,196 +8,85 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+<span class="anchor" id="about-me"></span>
 
-<span class='anchor' id='about-me'></span>
+<p class="intro-lead">I am a first-year Ph.D. student at the University of Hong Kong (HKU), advised by Prof. <a href="https://xjqi.github.io/">Xiaojuan Qi</a>.</p>
 
-I received the B.E. degree from the Harbin Institute of Technology (HIT), Harbin, China in 2021. I got my Master’s degree at the Institute of Automation, Chinese Academy of Science (CASIA) in 2024, advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/), collaborate closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
-I used to be the research intern of the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
-I'm currently working on technical exploration and application of multimodal foundation models in Kuaishou Technology.
-My research interest includes Long-Tailed Learning, Foundation Model, Vision Language Model. I have published some papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'>google scholar citations <strong><span id='total_cit'></span></strong></a>. <a href='https://scholar.google.com/citations?user=93wHW4oAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+My research focuses on long-tailed learning, multimodal foundation models, and vision-language models.
 
-Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
+I received my B.E. from Harbin Institute of Technology in 2021 and my master's degree from the Institute of Automation, Chinese Academy of Sciences (CASIA) in 2024. At CASIA, I was advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/) and worked closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
 
+Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explored multimodal foundation models and their applications. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
 
-# 🔥 News
-- *2025.05*: 🎉🎉 One paper was accepted by TNNLS.
-- *2025.03*: 🎉🎉 One paper was accepted by CVPR 2025.
-- *2024.07*: I joined in Kuaishou Technology!
-- *2024.03*: 🎉🎉 One paper was accepted by COLING 2024.
-- *2023.12*: 🎉🎉 One paper was accepted by AAAI 2024.
-- *2023.10*: 🎉🎉 One paper was accepted by PR.
-- *2023.10*: 🎉🎉 One paper was accepted by TIP.
-- *2023.01*: 🎉🎉 One paper was accepted by ICLR 2023. 
-- *2022.12*: I serve as a reviewer for CVPR 2023.
-- *2022.07*: I join the MEGVII Research as an Intern.
-- *2022.03*: 🎉🎉 One paper was accepted by CVPR 2022.
-- *2021.08*: I join National Laboratory of Pattern Recognition under the supervision of Prof. Jun Wan.
+<ul class="research-interests" aria-label="Research interests">
+  <li>Long-tailed learning</li>
+  <li>Multimodal foundation models</li>
+  <li>Vision-language models</li>
+</ul>
 
+<p class="profile-summary-links"><a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a> · <a href="https://scholar.google.com/citations?user=93wHW4oAAAAJ">Publications on Google Scholar<span id="total_cit" hidden></span></a></p>
 
-# 📝 Publications 
+<h2 id="-news">News</h2>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2022</div><img src='images/CVPR.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
+- *2026.09*: I joined the University of Hong Kong as a Ph.D. student!
+- *2025.12*: I joined ByteDance!
+- *2025.05*: One paper was accepted by TNNLS.
+- *2025.03*: One paper was accepted by CVPR 2025.
+- *2024.07*: I joined Kuaishou Technology!
+{: .news-list }
 
-<big>**Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:UebtZRa9Y70C'></span></strong>
+<details class="news-archive" markdown="1">
+<summary>Earlier news</summary>
 
-***<u>Jun Li</u>**\*, Zichang Tan\*, Jun Wan, Zhen Lei, Guodong Guo*
+- *2024.03*: One paper was accepted by COLING 2024.
+- *2023.12*: One paper was accepted by AAAI 2024.
+- *2023.10*: One paper was accepted by PR.
+- *2023.10*: One paper was accepted by TIP.
+- *2023.01*: One paper was accepted by ICLR 2023.
+- *2022.12*: I served as a reviewer for CVPR 2023.
+- *2022.07*: I joined the MEGVII Research as an Intern.
+- *2022.03*: One paper was accepted by CVPR 2022.
+- *2021.08*: I joined National Laboratory of Pattern Recognition under the supervision of Prof. Jun Wan.
+{: .news-list }
 
+</details>
 
-[[**PDF**]](https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf)
-[[**Project**]](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL?logo=github)
-![](https://img.shields.io/github/stars/Bazinga699/NCL)
+<h2 id="-publications">Publications</h2>
 
-</div>
-</div>
+{% include publications.html %}
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2023</div><img src='images/revcol.png' alt="sym" width="400" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
+<h2 id="-honors-and-awards">Honors & Awards</h2>
 
-<big>**Reversible Column Networks**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:hqOjcs7Dif8C'></span></strong>
-
-
-*Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **<u>Jun Li</u>**, Xiangyu Zhang*
-
-[[**PDF**]](https://arxiv.org/pdf/2212.11696.pdf) [[**Introduction**]](https://zhuanlan.zhihu.com/p/607773400) [[**Project**]](https://github.com/megvii-research/RevCol)![](https://img.shields.io/github/forks/megvii-research/RevCol?logo=github)
-![](https://img.shields.io/github/stars/megvii-research/RevCol)
-
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024 </div><img src='images/AAAI.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**Compound Text-Guided Prompt Tuning via Image-Adaptive Cues**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:8k81kl-MbHgC'></span></strong>
-
-*Hao Tan\*, **<u>Jun Li</u>**\*,Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang*
-
-
-
-[[**PDF**]](https://arxiv.org/pdf/2312.06401.pdf)
-[[**Project**]](https://github.com/EricTan7/TGP-T)![](https://img.shields.io/github/forks/EricTan7/TGP-T?logo=github)
-![](https://img.shields.io/github/stars/EricTan7/TGP-T)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Pattern Recognition</div><img src='images/PR.png' alt="sym" width="400" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:0EnyYjriUFMC'></span></strong>
-
-*Zichang Tan\*, **<u>Jun Li</u>**\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo*
-
-
-[[**PDF**]](https://arxiv.org/pdf/2306.16709)
-[[**Project**]](https://github.com/Bazinga699/NCL)![](https://img.shields.io/github/forks/Bazinga699/NCL?logo=github)
-![](https://img.shields.io/github/stars/Bazinga699/NCL)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TIP</div><img src='images/TIP.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:5nxA0vEk-isC'></span></strong>
-
-*Zenghao Bao, Zichang Tan, **<u>Jun Li</u>**, Jun Wan, Xibo Ma, Zhen Lei*
-
-
-
-[[**PDF**]](http://arxiv.org/abs/2307.10129)
-[[**Project**]]()
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025</div><img src='images/CVPR25.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**Recover and Match: Open-Vocabulary Multi-Label Recognition through Knowledge-Constrained Optimal Transport**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:KlAtU1dfN6UC'></span></strong>
-
-*Hao Tan, Zichang Tan, **<u>Jun Li</u>**, Ajian Liu, Jun Wan, Zhen Lei*
-
-
-[[**PDF**]](https://openaccess.thecvf.com/content/CVPR2025/papers/Tan_Recover_and_Match_Open-Vocabulary_Multi-Label_Recognition_through_Knowledge-Constrained_Optimal_Transport_CVPR_2025_paper.pdf)
-[[**Project**]](https://github.com/EricTan7/RAM)![](https://img.shields.io/github/forks/EricTan7/RAM?logo=github)
-![](https://img.shields.io/github/stars/EricTan7/RAM)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">COLING 2024</div><img src='images/COLING2024.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**Factorized Learning Assisted with Large Language Model for Gloss-free Sign Language Translation**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:3fE2CSJIrl8C'></span></strong>
-
-*Zhigang Chen, Benjia Zhou, **<u>Jun Li</u>**, Jun Wan, Zhen Lei, Ning Jiang, Quan Lu, Guoqing Zhao*
-
-
-[[**PDF**]](https://arxiv.org/pdf/2403.12556?)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TNNLS 2025</div><img src='images/UBG.jpeg' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**UBG: An Unreal BattleGround Benchmark With Object-Aware Hierarchical Proximal Policy Optimization**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:Zph67rFs4hoC'></span></strong>
-
-*Longyu Niu, Baihui Li, Xingjian Fan, Hao Fang, **<u>Jun Li</u>**, Junliang Xing, Jun Wan, Zhen Lei*
-
-
-[[**PDF**]](https://ieeexplore.ieee.org/document/11007665/)
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCSVT 2026</div><img src='images/SSPA.png' alt="sym" width="500" height="200"></div></div>
-<div class='paper-box-text' markdown="1">
-
-<big>**SSPA: Split-and-Synthesize Prompting with Gated Alignments for Multi-Label Image Recognition**</big><strong><span class='show_paper_citations' data='93wHW4oAAAAJ:kNdYIx-mwKoC'></span></strong>
-
-*Hao Tan, Zichang Tan, **<u>Jun Li</u>**, Jun Wan, Zhen Lei, Stan Z. Li*
-
-
-[[**PDF**]](https://arxiv.org/pdf/2407.20920)
-
-</div>
-</div>
-- \* indicates equal contribution.
-
-# 🎖 Honors and Awards
 - *2022.12*  National Scholarship.
 - *2021.06* Outstanding Graduates of Harbin Institute of Technology.
 - *2021.05* New Engineering Program Design Ability Examination (Level A), Rank 1/2280.
-- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on ![](https://img.shields.io/badge/dynamic/json?color=ff69b4&label=bilibili&query=data.stat.view&url=https%3A%2F%2Fapi.bilibili.com%2Fx%2Fweb-interface%2Fview%3Fbvid%3DBV1Ft4y1i79A) [Link](https://www.bilibili.com/video/BV1Ft4y1i79A/?vd_source=3168e87544c9e17f675d9261e8440f87).
+- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on [Link](https://www.bilibili.com/video/BV1Ft4y1i79A/?vd_source=3168e87544c9e17f675d9261e8440f87).
 - *2019.12* First Prize in the Heilongjiang Province Division of the National College Student Mathematical Modeling Competition.
 - *2016.11* National Olympiad in Informatics in Provinces (NOIP) - Advanced Group, Second Prize.
 
 
 
-# 📖 Educations
-- *2021.08 - 2024.07*, <img src='images/CASIA2.png' width="30" height="30" />Institute of Automation, Chinese Academy of Science (CASIA), Beijing, China.
-- *2017.08 - 2021.06*, <img src='images/HIT.png' width="30" height="30" />Harbin Institute of Technology (HIT), Harbin, China.
+<h2 id="-educations">Education</h2>
 
-# 💬 Talks
+{% include experience.html items=site.data.experience.education %}
+
+<h2 id="-work-experience">Work Experience</h2>
+
+{% include experience.html items=site.data.experience.work %}
+
+<h2 id="-talks">Talks</h2>
+
 - *2022.12*, presentation on the paper "Nested Collaborative Learning for Long-Tailed Visual Recognition" at VALSE2022.
 
 
 
-# 💻 Internships
-- *2022.07 - 2023.12*, <img src='images/megvii.png' width="60" height="20" /> Algorithm Intern, advisor: [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en)
+<h2 id="-internships">Internships</h2>
+
+{% include experience.html items=site.data.experience.internships %}
 
 <section id="goatcounter-visitor-map" class="visitor-map-section">
   <div class="visitor-map-section__header">
-    <h1 id="goatcounter-map-title">Pageviews Around the World</h1>
+    <h2 id="goatcounter-map-title">Pageviews Around the World</h2>
     <p class="visitor-map-section__started-at">Tracking since 2026.03.24</p>
   </div>
 
@@ -214,16 +103,16 @@ Email: <a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a>
       <div class="visitor-map-section__stats">
         <div class="visitor-map-section__stat-card">
           <span>Total pageviews</span>
-          <strong id="goatcounter-total-visitors">0</strong>
+          <strong id="goatcounter-total-visitors">—</strong>
         </div>
         <div class="visitor-map-section__stat-card">
           <span>Countries</span>
-          <strong id="goatcounter-total-countries">0</strong>
+          <strong id="goatcounter-total-countries">—</strong>
         </div>
       </div>
 
       <div class="visitor-map-section__list-wrap">
-        <h2>Top countries</h2>
+        <h3>Top countries</h3>
         <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
       </div>
     </div>

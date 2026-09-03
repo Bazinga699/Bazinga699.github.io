@@ -1,0 +1,35 @@
+education:
+  - organization: The University of Hong Kong
+    role: Ph.D.
+    dates: "2026.09 – 2030.09 (expected)"
+    location: Hong Kong, China
+    logo: images/HKU.png
+  - organization: Institute of Automation, Chinese Academy of Sciences
+    role: Master's degree
+    dates: "2021.08 – 2024.07"
+    location: Beijing, China
+    logo: images/CASIA2.png
+  - organization: Harbin Institute of Technology
+    role: Bachelor of Engineering (B.E.)
+    dates: "2017.08 – 2021.06"
+    location: Harbin, China
+    logo: images/HIT.png
+work:
+  - organization: ByteDance
+    role: ""
+    dates: "2025.12 – 2026.08"
+    logo: images/bytedance-mark.svg
+    wide_logo: true
+  - organization: Kuaishou Technology
+    role: ""
+    dates: "2024.07 – 2025.09"
+    logo: images/kuaishou-mark.png
+    wide_logo: true
+internships:
+  - organization: Megvii Research
+    role: Algorithm Intern
+    dates: "2022.07 – 2023.12"
+    logo: images/megvii.png
+    wide_logo: true
+    advisor: Xiangyu Zhang
+    advisor_url: https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en

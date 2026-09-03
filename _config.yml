@@ -7,7 +7,9 @@
 github: [metadata]
 # Site Settings
 title                    : "Jun Li (李俊)"
-description              : ""
+description              : "Jun Li is a Ph.D. student at the University of Hong Kong, researching multimodal foundation models, vision-language models, and long-tailed learning."
+url                      : "https://bazinga699.github.io"
+baseurl                  : ""
 repository               : "Bazinga699/Bazinga699.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -29,9 +31,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Jun Li (李俊)"
-  avatar           : "images/show.png"
-  bio              : "Institute of Automation, Chinese Academy of Science (CASIA)"
-  location         : "Beijing, China"
+  avatar           : "images/show.webp"
+  role             : "Ph.D. Student"
+  bio              : "The University of Hong Kong (HKU)"
+  previous         : "Previously at CASIA"
+  location         : "Hong Kong, China"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=93wHW4oAAAAJ&hl=zh-CN"
@@ -73,6 +77,7 @@ include:
   - files
 exclude:
   - docs
+  - scripts
   - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"

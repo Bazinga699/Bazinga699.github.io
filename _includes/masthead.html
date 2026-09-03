@@ -1,16 +1,13 @@
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
-          {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
+<header class="masthead">
+  <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+    <a class="site-nav__brand" href="{{ '/#about-me' | relative_url }}">Jun Li <span lang="zh">李俊</span></a>
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">
+      <span>Menu</span><span class="site-nav__icon" aria-hidden="true"></span>
+    </button>
+    <ul id="site-nav-links" class="site-nav__links">
+      {% for link in site.data.navigation.main %}
+      <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

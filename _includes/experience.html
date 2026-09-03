@@ -1,0 +1,16 @@
+<ul class="experience-list">
+  {% for item in include.items %}
+  <li class="experience-row">
+    <div class="experience-logo-wrap">
+      <img class="experience-logo{% if item.wide_logo %} experience-logo--wide{% endif %}" src="{{ item.logo | relative_url }}" alt="{{ item.organization | escape }} logo" width="64" height="56" loading="lazy" decoding="async">
+    </div>
+    <div class="experience-content">
+      <h3>{{ item.organization }}</h3>
+      {% if item.role and item.role != '' %}<p>{{ item.role }}</p>{% endif %}
+      <p class="experience-dates">{{ item.dates }}</p>
+      {% if item.location %}<p class="experience-location">{{ item.location }}</p>{% endif %}
+      {% if item.advisor %}<p>Advisor: <a href="{{ item.advisor_url }}">{{ item.advisor }}</a></p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

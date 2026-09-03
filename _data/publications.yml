@@ -1,0 +1,129 @@
+- title: 'SSPA: Split-and-Synthesize Prompting with Gated Alignments for Multi-Label Image Recognition'
+  venue: TCSVT 2026
+  year: 2026
+  image: images/SSPA.webp
+  image_original: images/SSPA.png
+  image_width: 2220
+  image_height: 720
+  authors: Hao Tan, Zichang Tan, **Jun Li**, Jun Wan, Zhen Lei, Stan Z. Li
+  scholar_id: 93wHW4oAAAAJ:kNdYIx-mwKoC
+  links:
+  - label: PDF
+    url: https://arxiv.org/pdf/2407.20920
+  image_large: images/SSPA-960.webp
+- title: 'Recover and Match: Open-Vocabulary Multi-Label Recognition through Knowledge-Constrained Optimal Transport'
+  venue: CVPR 2025
+  year: 2025
+  image: images/CVPR25.webp
+  image_original: images/CVPR25.png
+  image_width: 2511
+  image_height: 1216
+  authors: Hao Tan, Zichang Tan, **Jun Li**, Ajian Liu, Jun Wan, Zhen Lei
+  scholar_id: 93wHW4oAAAAJ:KlAtU1dfN6UC
+  links:
+  - label: PDF
+    url: https://openaccess.thecvf.com/content/CVPR2025/papers/Tan_Recover_and_Match_Open-Vocabulary_Multi-Label_Recognition_through_Knowledge-Constrained_Optimal_Transport_CVPR_2025_paper.pdf
+  - label: Project
+    url: https://github.com/EricTan7/RAM
+  image_large: images/CVPR25-960.webp
+- title: 'UBG: An Unreal BattleGround Benchmark With Object-Aware Hierarchical Proximal Policy Optimization'
+  venue: TNNLS 2025
+  year: 2025
+  image: images/UBG.webp
+  image_original: images/UBG.jpeg
+  image_width: 1060
+  image_height: 706
+  authors: Longyu Niu, Baihui Li, Xingjian Fan, Hao Fang, **Jun Li**, Junliang Xing, Jun Wan, Zhen Lei
+  scholar_id: 93wHW4oAAAAJ:Zph67rFs4hoC
+  links:
+  - label: PDF
+    url: https://ieeexplore.ieee.org/document/11007665/
+  image_large: images/UBG-960.webp
+- title: Compound Text-Guided Prompt Tuning via Image-Adaptive Cues
+  venue: AAAI 2024
+  year: 2024
+  image: images/AAAI.webp
+  image_original: images/AAAI.png
+  image_width: 2260
+  image_height: 998
+  authors: Hao Tan\*, **Jun Li**\*, Yizhuang Zhou, Jun Wan, Zhen Lei, Xiangyu Zhang
+  scholar_id: 93wHW4oAAAAJ:8k81kl-MbHgC
+  links:
+  - label: PDF
+    url: https://arxiv.org/pdf/2312.06401.pdf
+  - label: Project
+    url: https://github.com/EricTan7/TGP-T
+  image_large: images/AAAI-960.webp
+- title: Factorized Learning Assisted with Large Language Model for Gloss-free Sign Language Translation
+  venue: COLING 2024
+  year: 2024
+  image: images/COLING2024.webp
+  image_original: images/COLING2024.png
+  image_width: 2281
+  image_height: 1278
+  authors: Zhigang Chen, Benjia Zhou, **Jun Li**, Jun Wan, Zhen Lei, Ning Jiang, Quan Lu, Guoqing Zhao
+  scholar_id: 93wHW4oAAAAJ:3fE2CSJIrl8C
+  links:
+  - label: PDF
+    url: https://arxiv.org/pdf/2403.12556
+  image_large: images/COLING2024-960.webp
+- title: Reversible Column Networks
+  venue: ICLR 2023
+  year: 2023
+  image: images/revcol.webp
+  image_original: images/revcol.png
+  image_width: 1819
+  image_height: 788
+  authors: Yuxuan Cai, Yizhuang Zhou, Qi Han, Jianjian Sun, Xiangwen Kong, **Jun Li**, Xiangyu Zhang
+  scholar_id: 93wHW4oAAAAJ:hqOjcs7Dif8C
+  links:
+  - label: PDF
+    url: https://arxiv.org/pdf/2212.11696.pdf
+  - label: Introduction
+    url: https://zhuanlan.zhihu.com/p/607773400
+  - label: Project
+    url: https://github.com/megvii-research/RevCol
+  image_large: images/revcol-960.webp
+- title: 'NCL++: Nested Collaborative Learning for Long-Tailed Visual Recognition'
+  venue: Pattern Recognition
+  year: 2023
+  image: images/PR.webp
+  image_original: images/PR.png
+  image_width: 1553
+  image_height: 772
+  authors: Zichang Tan\*, **Jun Li**\*, Jinhao Du, Jun Wan, Zhen Lei, Guodong Guo
+  scholar_id: 93wHW4oAAAAJ:0EnyYjriUFMC
+  links:
+  - label: PDF
+    url: https://arxiv.org/pdf/2306.16709
+  - label: Project
+    url: https://github.com/Bazinga699/NCL
+  image_large: images/PR-960.webp
+- title: 'General vs. Long-Tailed Age Estimation: An Approach to Kill Two Birds with One Stone'
+  venue: TIP
+  year: 2023
+  image: images/TIP.webp
+  image_original: images/TIP.png
+  image_width: 1922
+  image_height: 853
+  authors: Zenghao Bao, Zichang Tan, **Jun Li**, Jun Wan, Xibo Ma, Zhen Lei
+  scholar_id: 93wHW4oAAAAJ:5nxA0vEk-isC
+  links:
+  - label: PDF
+    url: http://arxiv.org/abs/2307.10129
+  image_large: images/TIP-960.webp
+- title: Nested Collaborative Learning for Long-Tailed Visual Recognition
+  venue: CVPR 2022
+  year: 2022
+  image: images/CVPR.webp
+  image_original: images/CVPR.png
+  image_width: 2872
+  image_height: 1008
+  authors: '**Jun Li**\*, Zichang Tan\*, Jun Wan, Zhen Lei, Guodong Guo'
+  scholar_id: 93wHW4oAAAAJ:UebtZRa9Y70C
+  links:
+  - label: PDF
+    url: https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Nested_Collaborative_Learning_for_Long-Tailed_Visual_Recognition_CVPR_2022_paper.pdf
+  - label: Project
+    url: https://github.com/Bazinga699/NCL
+  image_large: images/CVPR-960.webp
