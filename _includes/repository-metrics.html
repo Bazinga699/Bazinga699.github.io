@@ -1,0 +1,10 @@
+<div class="repo-metrics" role="group" aria-label="GitHub metrics for {{ include.repository | escape }}">
+  <a class="metric-link" href="https://github.com/{{ include.repository }}/stargazers" data-count-url="https://img.shields.io/github/stars/{{ include.repository }}.json" data-count-label="stars" title="View stars on GitHub">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L2.9 9.6l6.3-.9Z"/></svg>
+    <span class="metric-value" data-count-value>—</span> <span data-count-label-text>stars</span>
+  </a>
+  <a class="metric-link" href="https://github.com/{{ include.repository }}/forks" data-count-url="https://img.shields.io/github/forks/{{ include.repository }}.json" data-count-label="forks" title="View forks on GitHub">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="4" r="2"/><circle cx="18" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><path d="M6 6v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V6M12 12v6"/></svg>
+    <span class="metric-value" data-count-value>—</span> <span data-count-label-text>forks</span>
+  </a>
+</div>

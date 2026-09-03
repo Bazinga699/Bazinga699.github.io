@@ -31,6 +31,10 @@ Keep `image_width` and `image_height` equal to the original image dimensions. Lo
 - `_sass/_visitor-map.scss`: visitor-map layout.
 - `assets/js/site.js`: menu state, Escape/outside-click dismissal, and the current-section indicator. No JavaScript is required to reach the navigation links.
 - Citation and visitor-data includes use `fetch`, timeouts, and fallback URLs. Localhost previews do not send GoatCounter pageviews.
+- `assets/js/metrics.js`: GitHub star/fork counts and Bilibili video views, displayed as native text with small inline SVG icons. Public Shields JSON endpoints provide the data; no badge images, tokens, or icon library are loaded. Successful counts are cached in the browser for six hours, duplicate repository requests are shared, and requests time out after ten seconds. A failed refresh keeps the last successful count with its retrieval time in the link tooltip; without a saved count, the link shows an unavailable message rather than zero.
+- Publication links pointing to `https://github.com/owner/repo` automatically get star/fork links. The video link in `_pages/about.md` uses `video-link.html` with a Bilibili `bvid`.
+
+The count styling draws on [Primer's CounterLabel](https://primer.style/product/components/counter-label/) and [icon accessibility guidance](https://primer.style/octicons/usage-guidelines/): use a small icon beside a readable text label, and hide decorative SVGs from screen readers. The simple SVG paths are local; no external icon assets are required. [Shields dynamic JSON documentation](https://shields.io/badges/dynamic-json-badge) describes the video count's JSONPath query.
 
 The main layout changes at 1024px; paper cards stack below 704px; compact profile spacing applies below 480px. Content is limited to a 1200px container on large monitors. Short desktop windows allow the profile to scroll normally.
 

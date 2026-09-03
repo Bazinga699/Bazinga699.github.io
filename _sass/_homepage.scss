@@ -51,7 +51,8 @@ p { margin: 0 0 1rem; }
 .page__content > h2 { font-size: 1.5rem; font-weight: 650; letter-spacing: -0.025em; margin: 3rem 0 1.15rem; padding-bottom: 0.65rem; border-bottom: 1px solid $line; }
 .intro-lead { font-size: 1.18rem; line-height: 1.65; color: $ink; }
 .research-interests { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 1.15rem 0; }
-.research-interests li { color: #31516e; background: #f1f5f9; padding: 0.2rem 0.65rem; border-radius: 4px; font-size: 0.82rem; }
+.research-interests a { display: flex; align-items: center; min-height: 36px; color: #31516e; background: #f1f5f9; padding: 0.3rem 0.7rem; border-radius: 4px; font-size: 0.82rem; text-decoration: none; }
+.research-interests a:hover { background: #e5edf5; color: $accent; text-decoration: underline; }
 .profile-summary-links { font-size: 0.9rem; color: $muted; }
 .news-list, .awards-list { padding-left: 1.2rem; margin: 0; }
 .news-list li, .awards-list li { padding-left: 0.3rem; margin-bottom: 0.6rem; }
@@ -76,6 +77,16 @@ p { margin: 0 0 1rem; }
 .paper-links a:hover { text-decoration: underline; }
 .show_paper_citations { color: $muted; font-size: 0.78rem; white-space: nowrap; }
 .publication-note { font-size: 0.8rem; color: $muted; margin-top: 0.9rem; }
+.repo-metrics { display: flex; flex-wrap: wrap; align-items: center; gap: 0 0.9rem; margin-top: 0.25rem; }
+.metric-link { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 36px; color: $muted; font-size: 0.78rem; text-decoration: none; white-space: nowrap; }
+.metric-link:hover { color: $accent; text-decoration: underline; }
+.metric-link .icon { width: 0.9rem; height: 0.9rem; }
+.metric-value { color: $ink; font-weight: 600; font-variant-numeric: tabular-nums; }
+[data-count-state="unavailable"] { color: $muted; }
+.video-resource { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 1.1rem; width: fit-content; max-width: 100%; min-height: 44px; margin: 0.55rem 0 0.3rem; padding: 0.5rem 0.75rem; border: 1px solid $line; border-radius: 6px; background: #fafcfe; font-size: 0.8rem; text-decoration: none; }
+.video-resource:hover { border-color: #b7cadb; background: #f1f5f9; }
+.video-resource__title { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+.video-resource__views { color: $muted; white-space: nowrap; }
 
 .experience-list { list-style: none; margin: 0; padding: 0; }
 .experience-row { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 1.1rem; align-items: start; padding: 1.1rem 0; border-bottom: 1px solid $line; }
@@ -112,7 +123,7 @@ p { margin: 0 0 1rem; }
   .paper-box-image { order: 2; }
   .paper-box-image a { max-width: 480px; }
   .paper-box-image img { max-height: 200px; }
-  .paper-links a { min-height: 44px; }
+  .paper-links a, .metric-link { min-height: 44px; }
 }
 @media (max-width: 29.999rem) {
   .site-nav { padding-inline: 1rem; }

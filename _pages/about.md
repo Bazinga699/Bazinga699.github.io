@@ -12,16 +12,16 @@ redirect_from:
 
 <p class="intro-lead">I am a first-year Ph.D. student at the University of Hong Kong (HKU), advised by Prof. <a href="https://xjqi.github.io/">Xiaojuan Qi</a>.</p>
 
-My research focuses on long-tailed learning, multimodal foundation models, and vision-language models.
+My research interests are embodied intelligence, foundation models, and vision-language models (VLMs).
 
 I received my B.E. from Harbin Institute of Technology in 2021 and my master's degree from the Institute of Automation, Chinese Academy of Sciences (CASIA) in 2024. At CASIA, I was advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/) and worked closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
 
 Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explored multimodal foundation models and their applications. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
 
 <ul class="research-interests" aria-label="Research interests">
-  <li>Long-tailed learning</li>
-  <li>Multimodal foundation models</li>
-  <li>Vision-language models</li>
+  <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:embodied_intelligence">Embodied Intelligence</a></li>
+  <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:foundation_model">Foundation Model</a></li>
+  <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:vision_language_model">VLM</a></li>
 </ul>
 
 <p class="profile-summary-links"><a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a> · <a href="https://scholar.google.com/citations?user=93wHW4oAAAAJ">Publications on Google Scholar<span id="total_cit" hidden></span></a></p>
@@ -60,7 +60,7 @@ Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explor
 - *2022.12*  National Scholarship.
 - *2021.06* Outstanding Graduates of Harbin Institute of Technology.
 - *2021.05* New Engineering Program Design Ability Examination (Level A), Rank 1/2280.
-- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. Experience Sharing Posted on [Link](https://www.bilibili.com/video/BV1Ft4y1i79A/?vd_source=3168e87544c9e17f675d9261e8440f87).
+- *2019.08*  National First Prize in the National College Student "NXP Cup" Intelligent Vehicle Contest. {% include video-link.html bvid="BV1Ft4y1i79A" %}
 - *2019.12* First Prize in the Heilongjiang Province Division of the National College Student Mathematical Modeling Competition.
 - *2016.11* National Olympiad in Informatics in Provinces (NOIP) - Advanced Group, Second Prize.
 

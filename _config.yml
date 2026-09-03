@@ -7,7 +7,7 @@
 github: [metadata]
 # Site Settings
 title                    : "Jun Li (李俊)"
-description              : "Jun Li is a Ph.D. student at the University of Hong Kong, researching multimodal foundation models, vision-language models, and long-tailed learning."
+description              : "Jun Li is a Ph.D. student at the University of Hong Kong, researching embodied intelligence, foundation models, and vision-language models (VLMs)."
 url                      : "https://bazinga699.github.io"
 baseurl                  : ""
 repository               : "Bazinga699/Bazinga699.github.io"

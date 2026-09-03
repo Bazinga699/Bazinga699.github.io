@@ -13,6 +13,10 @@
       {% for link in paper.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
       <span class="show_paper_citations" data="{{ paper.scholar_id }}" hidden></span>
     </div>
+    {% for link in paper.links %}{% if link.url contains 'https://github.com/' %}
+    {% assign repository = link.url | remove_first: 'https://github.com/' %}
+    {% include repository-metrics.html repository=repository %}
+    {% endif %}{% endfor %}
   </div>
 </article>
 {% endfor %}
