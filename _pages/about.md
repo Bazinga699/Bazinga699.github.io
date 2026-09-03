@@ -74,15 +74,13 @@ Previously, I worked at Kuaishou Technology and ByteDance, focusing on frontier 
 
 {% include experience.html items=site.data.experience.work %}
 
-<h2 id="-talks">Talks</h2>
-
-- *2022.12*, presentation on the paper "Nested Collaborative Learning for Long-Tailed Visual Recognition" at VALSE2022.
-
-
-
 <h2 id="-internships">Internships</h2>
 
 {% include experience.html items=site.data.experience.internships %}
+
+<h2 id="-talks">Talks</h2>
+
+- *2022.12*, presentation on the paper "Nested Collaborative Learning for Long-Tailed Visual Recognition" at VALSE2022.
 
 <section id="goatcounter-visitor-map" class="visitor-map-section">
   <div class="visitor-map-section__header">
