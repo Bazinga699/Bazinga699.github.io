@@ -28,7 +28,7 @@ Keep `image_width` and `image_height` equal to the original image dimensions. Lo
 ## Layout and behavior
 
 - `_sass/_homepage.scss`: typography, main grid, navigation, profile, publications, experience rows, keyboard focus, reduced motion, and print styles.
-- `_sass/_visitor-map.scss`: visitor-map layout.
+- `_sass/_visitor-map.scss`: compact visitor-map layout, with totals beside the heading. At 768px and above, the map and compact country list share a row; on smaller screens, the countries form a two-column list below the map. The map panel stretches to match the ranking panel so a tall sidebar cannot leave an unused gap below it.
 - `assets/js/site.js`: menu state, Escape/outside-click dismissal, and the current-section indicator. No JavaScript is required to reach the navigation links.
 - Citation and visitor-data includes use `fetch`, timeouts, and fallback URLs. Localhost previews do not send GoatCounter pageviews.
 - `assets/js/metrics.js`: GitHub star/fork counts and Bilibili video views, displayed as native text with small inline SVG icons. Public Shields JSON endpoints provide the data; no badge images, tokens, or icon library are loaded. Successful counts are cached in the browser for six hours, duplicate repository requests are shared, and requests time out after ten seconds. A failed refresh keeps the last successful count with its retrieval time in the link tooltip; without a saved count, the link shows an unavailable message rather than zero.

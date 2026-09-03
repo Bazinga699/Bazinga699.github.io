@@ -1,93 +1,99 @@
 .visitor-map-section {
     margin-top: 2.75rem;
-    padding: 1.25rem 1rem 0.9rem;
+    padding: 1.15rem;
     border: 1px solid #e6ebf2;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+    border-radius: 12px;
+    background: #fafcfe;
 
     h2 {
         margin-top: 0;
         border-bottom: 0;
         padding-bottom: 0;
         margin-bottom: 0.2rem;
-        font-size: 1.45rem;
+        font-size: 1.3rem;
     }
 
     h3 {
-        margin-top: 0;
-        font-size: 0.98rem;
+        margin: 0 0 0.5rem;
+        font-size: 0.9rem;
     }
 }
 
 .visitor-map-section__header {
-    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.visitor-map-section__heading {
+    flex: 1 1 17rem;
+    min-width: 0;
 }
 
 .visitor-map-section__started-at,
 .visitor-map-section__updated-at {
     margin: 0;
-    color: #6b7280;
-    font-size: 0.82rem;
+    color: #5c6b7c;
+    font-size: 0.75rem;
     line-height: 1.45;
 }
 
 .visitor-map-section__updated-at {
     margin-top: 0.75rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid #e4eaf0;
 }
 
 .visitor-map-section__stats {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
 }
 
 .visitor-map-section__stat-card {
-    padding: 0.7rem 0.8rem;
-    border-radius: 12px;
-    background: #f3f8ff;
-    border: 1px solid #dbeafe;
+    padding-left: 0.85rem;
+    border-left: 2px solid #dbe6f0;
 
     span {
         display: block;
-        color: #1e3a8a;
-        font-size: 0.8rem;
+        color: #5c6b7c;
+        font-size: 0.75rem;
     }
 
     strong {
         display: block;
-        margin-top: 0.1rem;
-        font-size: 1.2rem;
-        color: #0f172a;
+        font-size: 1.4rem;
+        line-height: 1.35;
+        font-variant-numeric: tabular-nums;
+        color: #17283c;
     }
 }
 
 .visitor-map-section__body {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
 
     @media (min-width: 48rem) {
-        grid-template-columns: minmax(0, 2.6fr) minmax(180px, 0.85fr);
-        align-items: start;
+        grid-template-columns: minmax(0, 1fr) 11.5rem;
+        align-items: stretch;
     }
-}
-
-.visitor-map-section__sidebar {
-    display: grid;
-    gap: 0.7rem;
 }
 
 .visitor-map-section__map-wrap,
 .visitor-map-section__list-wrap {
     min-width: 0;
-    border-radius: 14px;
+    border-radius: 8px;
     border: 1px solid #e7edf5;
     background: #fff;
 }
 
 .visitor-map-section__map-wrap {
+    display: grid;
+    align-items: center;
     position: relative;
     padding: 0.55rem;
     overflow: hidden;
@@ -153,7 +159,7 @@
 .visitor-map-section__empty-state {
     display: grid;
     place-items: center;
-    min-height: 285px;
+    min-height: 150px;
     padding: 1rem;
     color: #6b7280;
     text-align: center;
@@ -165,33 +171,49 @@
 }
 
 .visitor-map-section__list-wrap {
-    padding: 0.8rem 0.8rem 0.35rem;
+    padding: 0.8rem 0.8rem 0.45rem;
 }
 
 .visitor-map-section__country-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.1rem;
+
+    @media (min-width: 48rem) {
+        grid-template-columns: minmax(0, 1fr);
+    }
 
     li {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
-        gap: 0.75rem;
-        padding: 0.58rem 0;
+        gap: 0.5rem;
+        min-width: 0;
+        padding: 0.35rem 0;
         border-top: 1px solid #eef2f7;
-        font-size: 0.86rem;
-    }
-
-    li:first-child {
-        border-top: 0;
-        padding-top: 0.15rem;
+        font-size: 0.78rem;
+        line-height: 1.5;
     }
 
     span {
-        color: #111827;
+        color: #334155;
+        min-width: 0;
     }
 
     strong {
-        color: #1d4ed8;
+        color: #245d91;
+        font-variant-numeric: tabular-nums;
+        flex-shrink: 0;
     }
+}
+
+@media (max-width: 29.999rem) {
+    .visitor-map-section { padding: 0.8rem; }
+    .visitor-map-section h2 { font-size: 1.1rem; }
+    .visitor-map-section__stats { width: 100%; gap: 1.5rem; }
+    .visitor-map-section__country-list { column-gap: 0.85rem; }
+    .visitor-map-section__list-wrap { padding-inline: 0.65rem; }
 }

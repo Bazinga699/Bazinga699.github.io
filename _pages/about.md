@@ -16,7 +16,7 @@ My research interests are embodied intelligence, foundation models, and vision-l
 
 I received my B.E. from Harbin Institute of Technology in 2021 and my master's degree from the Institute of Automation, Chinese Academy of Sciences (CASIA) in 2024. At CASIA, I was advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/) and worked closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
 
-Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explored multimodal foundation models and their applications. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
+Previously, I worked at Kuaishou Technology and ByteDance, focusing on frontier research and real-world applications of Multimodal Large Language Models. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
 
 <ul class="research-interests" aria-label="Research interests">
   <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:embodied_intelligence">Embodied Intelligence</a></li>
@@ -86,8 +86,20 @@ Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explor
 
 <section id="goatcounter-visitor-map" class="visitor-map-section">
   <div class="visitor-map-section__header">
-    <h2 id="goatcounter-map-title">Pageviews Around the World</h2>
-    <p class="visitor-map-section__started-at">Tracking since 2026.03.24</p>
+    <div class="visitor-map-section__heading">
+      <h2 id="goatcounter-map-title">Pageviews Around the World</h2>
+      <p class="visitor-map-section__started-at">Tracking since 2026.03.24</p>
+    </div>
+    <div class="visitor-map-section__stats" role="group" aria-label="Visitor totals">
+      <div class="visitor-map-section__stat-card">
+        <span>Total pageviews</span>
+        <strong id="goatcounter-total-visitors">—</strong>
+      </div>
+      <div class="visitor-map-section__stat-card">
+        <span>Countries</span>
+        <strong id="goatcounter-total-countries">—</strong>
+      </div>
+    </div>
   </div>
 
   <div class="visitor-map-section__body">
@@ -99,22 +111,9 @@ Previously, I worked at Kuaishou Technology and ByteDance. At Kuaishou, I explor
       </div>
     </div>
 
-    <div class="visitor-map-section__sidebar">
-      <div class="visitor-map-section__stats">
-        <div class="visitor-map-section__stat-card">
-          <span>Total pageviews</span>
-          <strong id="goatcounter-total-visitors">—</strong>
-        </div>
-        <div class="visitor-map-section__stat-card">
-          <span>Countries</span>
-          <strong id="goatcounter-total-countries">—</strong>
-        </div>
-      </div>
-
-      <div class="visitor-map-section__list-wrap">
-        <h3>Top countries</h3>
-        <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
-      </div>
+    <div class="visitor-map-section__list-wrap">
+      <h3>Top countries</h3>
+      <ol id="goatcounter-country-list" class="visitor-map-section__country-list"></ol>
     </div>
   </div>
 
