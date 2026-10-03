@@ -1,0 +1,62 @@
+{
+  "title": "Pageviews Around the World",
+  "updated_at": "2026-10-03T13:22:22.063681+00:00",
+  "checked_at": "2026-10-03T13:22:22.063681+00:00",
+  "source_status": "fresh",
+  "total_pageviews": 221,
+  "total_countries": 13,
+  "countries": [
+    {
+      "code": "CN",
+      "pageviews": 95
+    },
+    {
+      "code": "US",
+      "pageviews": 74
+    },
+    {
+      "code": "SG",
+      "pageviews": 24
+    },
+    {
+      "code": "JP",
+      "pageviews": 14
+    },
+    {
+      "code": "PL",
+      "pageviews": 3
+    },
+    {
+      "code": "KZ",
+      "pageviews": 2
+    },
+    {
+      "code": "NL",
+      "pageviews": 2
+    },
+    {
+      "code": "RU",
+      "pageviews": 2
+    },
+    {
+      "code": "BD",
+      "pageviews": 1
+    },
+    {
+      "code": "ID",
+      "pageviews": 1
+    },
+    {
+      "code": "KR",
+      "pageviews": 1
+    },
+    {
+      "code": "MX",
+      "pageviews": 1
+    },
+    {
+      "code": "TR",
+      "pageviews": 1
+    }
+  ]
+}
