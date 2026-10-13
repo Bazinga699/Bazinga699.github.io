@@ -16,12 +16,13 @@ My research interests are embodied intelligence, foundation models, and vision-l
 
 I received my B.E. from Harbin Institute of Technology in 2021 and my master's degree from the Institute of Automation, Chinese Academy of Sciences (CASIA) in 2024. At CASIA, I was advised by Prof. [Jun Wan](http://www.cbsr.ia.ac.cn/users/jwan/) and worked closely with Prof. [Zhen Lei](https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=zh-CN&oi=ao) (IEEE Fellow).
 
-Previously, I worked at Kuaishou Technology and ByteDance, focusing on frontier research and real-world applications of Multimodal Large Language Models. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
+Previously, I worked at Kuaishou Technology and ByteDance, focusing on frontier research and real-world applications of Multimodal Large Language Models, as well as the application of Retrieval Augmented Generation (RAG) and agent systems in specific business scenarios. I also interned with the Foundation Model Group at Megvii Research, advised by [Xiangyu Zhang](https://scholar.google.com/citations?user=yuB-cfoAAAAJ&hl=en).
 
 <ul class="research-interests" aria-label="Research interests">
   <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:embodied_intelligence">Embodied Intelligence</a></li>
   <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:foundation_model">Foundation Model</a></li>
   <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:vision_language_model">VLM</a></li>
+  <li><a href="https://scholar.google.com/citations?view_op=search_authors&amp;hl=zh-CN&amp;mauthors=label:agent">Agent</a></li>
 </ul>
 
 <p class="profile-summary-links"><a href="mailto:lijun9066@outlook.com">lijun9066@outlook.com</a> · <a href="https://scholar.google.com/citations?user=93wHW4oAAAAJ">Publications on Google Scholar<span id="total_cit" hidden></span></a></p>
